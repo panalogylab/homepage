@@ -10387,3 +10387,11 @@ h3.reservation-sub-title {
 #core-team .container + .container {
   margin-top: 2em;
 }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  color: black;
+}
