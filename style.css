@@ -10383,3 +10383,7 @@ h3.reservation-sub-title {
     transform: rotate(360deg);
   }
 }
+
+#core-team .container + .container {
+  margin-top: 2em;
+}
