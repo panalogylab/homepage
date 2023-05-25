@@ -237,14 +237,14 @@ div#no-equal-gallery {
   padding: 5px;
 }
 .lead {
-  color: #808080;
+  color: #000000;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.75;
   margin-bottom: 0;
 }
 .lead p {
-  color: #808080;
+  color: #000000;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.75;
@@ -10390,6 +10390,7 @@ h3.reservation-sub-title {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  color: black;
 }
 
 p {
