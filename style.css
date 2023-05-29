@@ -247,6 +247,14 @@ div#no-equal-gallery {
   line-height: 1.75;
   margin-bottom: 0;
 }
+.lead-big{
+  color: #000000;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: 'Times New Roman', 'Times', serif;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
 .lead-sans-serif {
   color: #000000;
   font-weight: 400;
@@ -2656,6 +2664,19 @@ i.pull-left.icon-default-light {
   margin: 0 auto;
   text-align: center;
   width: 65%;
+  margin-bottom: 60px;
+}
+.section-sub-title-light-full-left {
+  color: #ffffff;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+.section-sub-title-dark-full-left {
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 20px;
   margin-bottom: 60px;
 }
 h1.title-dark-big {
