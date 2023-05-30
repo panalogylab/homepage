@@ -320,6 +320,10 @@ div#no-equal-gallery {
     line-height: 1.75;
 }
 
+.slider-sub-text-font p{
+    font-size: 24px;
+}
+
 .lead p {
     color: #000000;
     font-weight: 400;
