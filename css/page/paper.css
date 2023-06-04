@@ -1,0 +1,45 @@
+#content sup {
+    color: blue;
+    cursor: pointer;
+}
+#content sup:before {
+    content: '[';
+    cursor: pointer;
+}
+#content sup:after {
+    content: ']';
+    cursor: pointer;
+}
+#content sup.footnote:before {
+    content: '';
+    cursor: pointer;
+}
+#content sup.footnote:after {
+    content: '';
+    cursor: pointer;
+}
+
+.tooltip {
+    width: 80%;
+    max-width: 500px;
+}
+
+.tooltip-inner {
+    max-width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.tooltip-inner .title {
+    font-weight: bold;
+}
+
+.toc {
+    position: sticky;
+    top: 0;
+}
+
+.toc ul ul {
+    margin-left: 5px;
+}
