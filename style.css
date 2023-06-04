@@ -251,6 +251,10 @@ ul {
     padding: 30px 30px 15px;
 }
 
+.txt-bx-p-sm {
+    padding: 0 30px 15px;
+}
+
 .content-box-p {
     padding: 30px 20px;
 }
