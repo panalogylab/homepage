@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Steven Bickely, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran">
-<meta name="keywords" content="template, demo">
+<meta name="author" content="Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran">
+<meta name="keywords" content="Social Science, Social AI, Large Language Models, Augmented Language Models, Alignment Research, Survey Method, Experimental Method">
 
 <title>Survey: a platform to explore emerging value perspectives in ALMs’ behaviors</title>
 <style>
@@ -72,7 +72,7 @@ div.csl-indent {
     <div class="quarto-title-meta-heading">Affiliation</div>
     
       <div class="quarto-title-meta-contents">
-      <p class="author"><a href="https://panalogy-lab.com">Steven Bickely, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran</a> </p>
+      <p class="author"><a href="https://panalogy-lab.com">Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran</a> </p>
     </div>
       <div class="quarto-title-meta-contents">
           <p class="affiliation">
@@ -91,7 +91,7 @@ div.csl-indent {
   <div>
     <div class="abstract">
       <div class="abstract-title">Abstract</div>
-      <p>This paper presents our work on Survey, a platform for analyzing augmented language models’s (ALMs) emergent alignment behaviours through their value perspectives.</p>
+      <p>This paper presents our work on Survey, a platform for analyzing augmented language models’s (ALMs) emergent alignment behaviours through their attitude and value perspectives.</p>
     </div>
   </div>
   
@@ -101,14 +101,14 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link active" data-scroll-target="#sec-intro">Introduction</a></li>
-  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
-  <li><a href="#framework" id="toc-framework" class="nav-link" data-scroll-target="#framework">Framework</a></li>
-  <li><a href="#some-empirical-findings" id="toc-some-empirical-findings" class="nav-link" data-scroll-target="#some-empirical-findings">Some Empirical Findings</a></li>
-  <li><a href="#limitations-and-future-avenues" id="toc-limitations-and-future-avenues" class="nav-link" data-scroll-target="#limitations-and-future-avenues">Limitations and Future Avenues</a></li>
+  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link active" data-scroll-target="#sec-intro">Motivations</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#platform-design" id="toc-platform-design" class="nav-link" data-scroll-target="#platform-design">Platform Design</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a></li>
+  <li><a href="#future-development" id="toc-future-development" class="nav-link" data-scroll-target="#future-development">Future Development</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="survey_files/survey.pdf" target="_blank"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="survey_files/survey.pdf" target="_blank"><i class="bi bi-file-pdf"></i>PDF (arxiv)</a></li><li><a href="survey_files/survey.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -116,81 +116,101 @@ div.csl-indent {
 
 
 <section id="sec-intro" class="level1">
+<h1>Motivations</h1>
+<p>We built Survey withe following motivations in mind:</p>
+<ul>
+<li><p>AI alignment in complex social context is <strong>important</strong>, especially when AI systems make decisions or assist people in making decisions in complex settings where there may be no true “right” answer (i.e., where “right” is contextual to the specific information of the real-world situation).</p></li>
+<li><p>Doing survey and experiments, despite shortcomings, is still a <strong>widely</strong> adopted method to study social behaviors, including alignments <span class="citation" data-cites="bhattacherjee"><a href="#ref-bhattacherjee" role="doc-biblioref">[1]</a></span>. Language model evaluation frameworks are essentially survey/experiment models <span class="citation" data-cites="openai/e"><a href="#ref-srivastava_beyond_2022" role="doc-biblioref">[3]</a></span>.</p></li>
+<li><p>Applying the survey approach to systematically analyzing ALMs’ alignment behaviors is therefore desirable. ALMs are the most advanced AI systems with general reasoning capability, and the have been increasingly operating in complex social context with emergent behaviors not expected before.</p></li>
+<li><p>Being able to learn from ALM’s feedback to <strong>improve</strong> survey/experiment design is a great application of ALMs, thus helping researchers to construct quality survey frameworks at a fraction of the resources and time that would be otherwise required when humans have to do everything.</p></li>
+<li><p>Survey is the <strong>first</strong> platform delivering robust results for the above value propositions.</p></li>
+</ul>
+</section>
+<section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Our new platform, Survey, aims to explore emerging value perspectives in Augmented Language Models (ALMs) <span class="citation" data-cites="mialon"><a href="#ref-mialon" role="doc-biblioref">[1]</a></span> behaviors through decision premises and contextuality in complex social settings. <strong>[why complex social settings?]</strong>. Our approach to exploring ALM’s behaviors, and their value perspectives, is based on presenting the models with complex sets of survey questions then analyzing their responses under in various contexts. <strong>[why do we use a survey-based approach to study value alignment? is this a proven methods? ref to seminar papers?]</strong></p>
-<p>The first key aspect we address is the question of why understanding ALM’s value perspectives matters in alignment research. By examining the context-dependent values that drive ALMs’ behaviours, we gain valuable insights into the ethical and moral frameworks and traces that shape their decision-making processes (as well as our own). These insights can help us align ALMs with (context-specific) human values and promote responsible AI development <span class="citation" data-cites="tamkin"><a href="#ref-tamkin" role="doc-biblioref">[2]</a></span>.</p>
+<p>Our new platform, <strong>Survey</strong>, aims to explore emerging value perspectives in Augmented Language Models (ALMs) <span class="citation" data-cites="mialon_augmented_2023"><a href="#ref-mialon_augmented_2023" role="doc-biblioref">[4]</a></span> through decision premises and contextuality in complex social settings. We chose to focus on complex social settings because these environments present a wide array of situations and dilemmas that help in assessing the multifaceted and nuanced value judgments that ALMs have to make in the real world. As a result, we can better understand their decision-making mechanisms and the underlying value systems they rely on.</p>
+<p>Our approach to exploring ALM’s behaviors, and their value perspectives, is based on presenting the models with complex sets of survey questions and experimental settings then analyzing their responses under in various contexts. We opted for a survey-based approach as it has been proven to be an effective method for ALM probing and value elicitation <span class="citation" data-cites="arora"><a href="#ref-binz2023" role="doc-biblioref">[6]</a></span>. Value elicitation of humans has always been an important research avenue <span class="citation" data-cites="haerpfer"><a href="#ref-hofstede2005" role="doc-biblioref">[8]</a></span>, as an individual’s identity and values often manifest in the choices and decisions they make. Given the increasing role of ALMs as agents interacting with humans as principals (i.e., principal-agent relationship in nature), it becomes crucial to comprehend the underlying values of these models and their implications for recommendations and decision-making processes, which may or may not align with those of human principals. By allowing the models to respond to a series of contextualized questions, we can gain valuable insights into how they navigate ethical scenarios and prioritize differing values for different principal profiles (e.g., age, race, country of residence, etc).</p>
+<p>The first key aspect we address is the question of why understanding ALM’s value perspectives matters in alignment research. By examining the context-dependent values that drive ALMs’ behaviours, we gain valuable insights into the ethical and moral frameworks and traces that shape their decision-making processes (as well as our own). These insights can help us align ALMs with (context-specific) human values and promote responsible AI development <span class="citation" data-cites="tamkin"><a href="#ref-tamkin" role="doc-biblioref">[9]</a></span>.</p>
 <p>Defining measures of values is another crucial element of our platform, Survey. We recognize that values are multifaceted and subjective, making their quantification challenging. Through rigorous research and analysis, we aim to develop and translate robust methodologies to define and measure values in the context of ALMs. This will provide a solid foundation for studying and understanding their behavior patterns in complex social settings.</p>
 <p>To effectively explore emerging value perspectives in ALMs’ behaviors, we employ state-of-the-art (SOTA) ALM simulation techniques. By simulating ALMs in realistic scenarios, we can observe their decision-making processes and identify any evolving biases or value systems. This knowledge is crucial for staying ahead of potential risks and ensuring the responsible development of AI technologies.</p>
 <p>The potential applications of our platform extend beyond the fields of behavioural economics, cognitive psychology, or market research. We envision leveraging the insights gained to help drive social AI alignment and design in research, industry and community alike. By aligning AI systems with human values, we can (co-)create social AI systems that complement and enhance lives, benefiting society as a whole.</p>
 <p>In conclusion, our platform Survey offers a unique opportunity to explore and understand the emerging value perspectives in ALMs’ behaviors. By addressing the questions of why world values matter, defining measures of values, and simulating ALMs in complex social settings, we can unlock insights that will help shape the future of AI development. With a focus on social AI alignment and design, we aim to create long-lived, complex social AI agents and systems that align with human values, promoting a responsible and beneficial integration of AI into industry and society.</p>
 </section>
-<section id="background" class="level1">
-<h1>Background</h1>
-<p>With the emergent capabilities of Large Language Models (LLMs) and the ongoing development of Augmented Language Models (ALMs), understanding the underlying premises that govern their behaviors and decision-making processes becomes increasingly crucial, especially when they operate in complex social settings and have real-world impact. This understanding is essential to ensure the alignment of social AI with human values.</p>
-<p>ALMs, which are essentially like advanced versions of pre-trained LLMs like gpt-4, incorporate various elements such as retrieval plug-ins, different learning techniques (few-shot), diverse prompting methods (such as chain-of-thought, self-model, and contextual prompts), functional coding, and integration with other modalities like voice, vision, and sound <span class="citation" data-cites="mialon"><a href="#ref-mialon" role="doc-biblioref">[1]</a></span>. Additionally, future iterations of ALMs are expected to incorporate different AI techniques such as reinforcement learning and symbolic logic, enhancing their knowledge organisation, reasoning, and learning capabilities.</p>
-<p>Researchers have been quick to recognize the potential of LLMs as valuable tools to study &nbsp;and probe the human mind and society<span class="citation" data-cites="arora"><a href="#ref-miotto" role="doc-biblioref">[6]</a></span>, given their training on vast amounts of human data and their ability to generate human-like text. Others have discussed their potential in simulating human subjects <span class="citation" data-cites="aher"><a href="#ref-park" role="doc-biblioref">[9]</a></span>. Consequently, researchers from various disciplines such as behavioral economics, cognitive psychology, social psychology, linguistics, and others have proposed different tools, surveys, and methodologies to investigate LLMs’ behavior and decision-making processes. However, the procedures and tuning of LLMs (e.g., temperature, context window, prompt context and structure) for judgement and evaluation of alignment are not yet standardized or consistently applied across studies. Moreover, digital literacy and programming skills continue to present significant obstacles for many researchers, particularly those in behavioral economics and the social sciences.</p>
-<p>Considering the fast-paced nature of research and development in AI at the moment, it is essential to also extend our focus beyond pre-trained LLMs and consider the emergent capabilities and value systems of ALMs within various different social contexts. ALMs are increasingly augmented with additional tools and various prompting techniques, spanning different context windows and incorporating other modalities. Furthermore, these ALMs are now actively performing real-world actions. Calling a tool in the context of ALMs often involves having an impact on the virtual or physical world and observing the resulting effects, which are typically integrated into the ALM’s ongoing context. Moreover, ALMs are increasingly engaging in delegate actions such as carrying out transactions on our behalf or responding to customer queries and emails in human-like ways.</p>
-<p>By acknowledging the advancements in ALMs and the complex nature of their interactions with the world, we can gain a comprehensive understanding of the premises underlying their behaviors and decision-making processes. This knowledge is crucial for ensuring the development of responsible and aligned social AI systems that reflect human values for the benefit of all humankind. To facilitate this exploration in an easy and intuitive manner, we have developed a social science research platform called Survey . It empowers researchers to investigate the behaviors and decision-making of LLMs and ALMs in a robust and systematic way, using an easy-to-use, click-and-play user interface</p>
-</section>
-<section id="framework" class="level1">
-<h1>Framework</h1>
+<section id="platform-design" class="level1">
+<h1>Platform Design</h1>
 <p>To be continued…</p>
 </section>
-<section id="some-empirical-findings" class="level1">
-<h1>Some Empirical Findings</h1>
-<p><strong>[Here we can add a section showing results of using Survey to answer the world-values questions. Thus world-values survey is just only one of many use cases for Survey.]</strong></p>
+<section id="applications" class="level1">
+<h1>Applications</h1>
+<p>With the emergent capabilities of Large Language Models (LLMs) and the ongoing development of Augmented Language Models (ALMs), understanding the underlying premises that govern their behaviors and decision-making processes becomes increasingly crucial, especially when they operate in complex social settings and have real-world impact. This understanding is essential to ensure the alignment of social AI with human values.</p>
+<p>ALMs, which are essentially built on top of pre-trained LLMs like gpt-4, incorporate various elements such as retrieval plug-ins, different learning techniques (few-shot), diverse prompting methods (such as chain-of-thought, self-model, and contextual prompts), functional coding, and integration with other modalities like voice, vision, and sound <span class="citation" data-cites="mialon"><a href="#ref-mialon" role="doc-biblioref">[10]</a></span>. Additionally, future iterations of ALMs are expected to incorporate different AI techniques such as reinforcement learning and symbolic logic, enhancing their knowledge organisation, reasoning, and learning capabilities.</p>
+<p>Researchers have been quick to recognize the potential of LLMs as valuable tools to study and probe the human mind and society<span class="citation" data-cites="arora"><a href="#ref-miotto" role="doc-biblioref">[12]</a></span>, given their training on vast amounts of human data and their ability to generate human-like text. Others have discussed their potential in simulating human subjects <span class="citation" data-cites="aher"><a href="#ref-park" role="doc-biblioref">[15]</a></span>. Consequently, researchers from various disciplines such as behavioral economics, cognitive psychology, social psychology, linguistics, and others have proposed different tools, surveys, and methodologies to investigate LLMs’ behavior and decision-making processes. However, the procedures and tuning of LLMs (e.g., temperature, context window, prompt context and structure) for judgment and evaluation of alignment are not yet standardized or consistently applied across studies. Moreover, digital literacy and programming skills continue to present significant obstacles for many researchers, particularly those in behavioral economics and the social sciences.</p>
+<p>Considering the fast-paced nature of research and development in AI at the moment, it is essential to also extend our focus beyond pre-trained LLMs and consider the emergent capabilities and value systems of ALMs within various different social contexts. ALMs are increasingly augmented with additional tools and various prompting techniques, spanning different context windows and incorporating other modalities. Furthermore, these ALMs are now actively performing real-world actions. Calling a tool in the context of ALMs often involves having an impact on the virtual or physical world and observing the resulting effects, which are typically integrated into the ALM’s ongoing context. Moreover, ALMs are increasingly engaging in delegate actions such as carrying out transactions on our behalf or responding to customer queries and emails in human-like ways.</p>
+<p>By acknowledging the advancements in ALMs and the complex nature of their interactions with the world, we can gain a comprehensive understanding of the premises underlying their behaviors and decision-making processes. This knowledge is crucial for ensuring the development of responsible and aligned social AI systems that reflect human values for the benefit of all humankind.</p>
+<p>To facilitate this exploration in an easy and intuitive manner, we have developed a social science research platform called Survey . It empowers researchers to investigate the behaviors and decision-making of LLMs and ALMs in a robust and systematic way, using an easy-to-use, click-and-play online interface. By simulating decision-making across a spectrum of randomised agent demographic attributes (e.g., age, gender, education level, personality, etc), Survey provides a unique platform to investigate even the most sensitive and taboo social science topics (e.g., end-of-life decisions, domestic violence, abortion, etc). By probing these areas in a simulated environment, we leverage the potential of ALMs to explore sensitive topics (e.g., health, social, economic, ethical, etc) in a safe and ethical environment.</p>
 </section>
-<section id="limitations-and-future-avenues" class="level1">
-<h1>Limitations and Future Avenues</h1>
-<p>Whilst we do begin with Survey to explore the emergent values in ALMs behaviours and decision making in a robust and systematic way, the augmentation of LLMs in this current proof-of-concept version of the platform. We have not yet explored other computational and decision-making techniques like reinforcement learning, or the utility of other modalities. This is a key future avenue for this platform.</p>
-<p>A key limitation of the social context of our simulation is that context is provided in a randomized manner, and using a generic story template to build up the context of the agent (e.g., you are &lt;AGE&gt;, a specialist in &lt;OCCUPATION&gt;, and operate in &lt;LOCATION&gt;). We do not draw on or attempt to simulate human subjects from demographic backgrounds of past survey respondents, as in e.g., <span class="citation" data-cites="argyle"><a href="#ref-argyle" role="doc-biblioref">[10]</a></span></p>
-<p>As an initial proof-of-concept, we have naturally had to limit the number of context variables available in the Survey platform. Here are some dot points indicating the social context variables that are not currently implemented in our platform, but are planned future additions:</p>
-<p>Employment status (employed full time, employed part time, employed casual, self-employed, unemployed, studying part time and working full time, studying full time and working part time, studying full time and not working)</p>
+<section id="future-development" class="level1">
+<h1>Future Development</h1>
+<p>A key limitation of the social context of our simulation is that context is provided in a randomized manner (uniform distribution), and using a generic story template to build up the context of the agent (e.g., you are &lt;AGE&gt;, your personality is &lt;BIG 5 PROFILE&gt;, and reside in &lt;LOCATION&gt;). We do not draw on or attempt to simulate human subjects from demographic backgrounds of past survey respondents, as in e.g., <span class="citation" data-cites="argyle"><a href="#ref-argyle" role="doc-biblioref">[16]</a></span>. Note, this approach also means that sometimes we end up with “interesting” agent profile combinations that may seldom present in the real world (e.g., a male lesbian).</p>
+<p>As an initial proof-of-concept, we have naturally had to limit the number of context variables available in the Survey platform. A key next step is to allow the addition and customization of top-level profile attributes as well as their options (i.e., an extension to the existing capability for customising options within the existing set of top-level demographic attributes like age, gender, etc.). For example, to create new top-level attributes like employment status, rural vs urban residence, mental health status, occupational industry, marital/family status, etc.</p>
+<p>Other future development in the pipeline for the Survey platform:</p>
 <ul>
-<li><p>Rural vs urban residence</p></li>
-<li><p>Mental health status</p></li>
-<li><p>Cognitive style (e.g., analytical, intuitive, practical, creative)</p></li>
-<li><p>Marital/family status</p></li>
-<li><p>Occupational industry</p></li>
-<li><p>Immigration status</p></li>
-<li><p>Veteran status</p></li>
-<li><p>Home ownership vs.&nbsp;renting</p></li>
-<li><p>Food security status</p></li>
+<li><p>Customisation of the “analysis” parameter/prompt to allow users to directly enter the prompt instructions to customise how the ALMs critically analyse the questions in “critic” mode.</p></li>
+<li><p>Parallelisation of OpenAI API queries to reduce simulation times.</p></li>
+<li><p>User interface - add more detailed progress indicator, add output visualisation</p></li>
 </ul>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="references" class="level1 unnumbered">
 <h1 class="unnumbered">References</h1>
 <div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-mialon" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">G. Mialon <em>et al.</em>, <span>“Augmented Language Models: a Survey.”</span></div>
+<div id="ref-bhattacherjee" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Bhattacherjee, <span>“Social Science Research: Principles, Methods, and Practices.”</span></div>
 </div>
-<div id="ref-tamkin" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">A. Tamkin, M. Brundage, J. Clark, and D. Ganguli, <span>“Understanding the capabilities, limitations, and societal impact of large language models,”</span> doi: <a href="https://doi.org/10.48550/arXiv.2102.02503">10.48550/arXiv.2102.02503</a>.</div>
+<div id="ref-openai/e" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline"><span>“Openai/evals: Evals is a framework for evaluating LLMs and LLM systems, and an open-source registry of benchmarks.”</span> Available: <a href="https://github.com/openai/evals">https://github.com/openai/evals</a></div>
+</div>
+<div id="ref-srivastava_beyond_2022" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">A. Srivastava <em>et al.</em>, <span>“Beyond the <span>Imitation</span> <span>Game</span>: <span>Quantifying</span> and extrapolating the capabilities of language models.”</span> arXiv, Jun. 2022. doi: <a href="https://doi.org/10.48550/arXiv.2206.04615">10.48550/arXiv.2206.04615</a>.</div>
+</div>
+<div id="ref-mialon_augmented_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">G. Mialon <em>et al.</em>, <span>“Augmented <span>Language</span> <span>Models</span>: A <span>Survey</span>.”</span> arXiv, Feb. 2023. doi: <a href="https://doi.org/10.48550/arXiv.2302.07842">10.48550/arXiv.2302.07842</a>.</div>
 </div>
 <div id="ref-arora" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">A. Arora, L.-A. Kaffee, and I. Augenstein, <span>“Probing Pre-Trained Language Models for Cross-Cultural Differences in Values.”</span></div>
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">A. Arora, L.-A. Kaffee, and I. Augenstein, <span>“Probing Pre-Trained Language Models for Cross-Cultural Differences in Values.”</span></div>
 </div>
 <div id="ref-binz2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M. Binz and E. Schulz, <span>“Using cognitive psychology to understand GPT-3,”</span> <em>Proceedings of the National Academy of Sciences</em>, vol. 120, no. 6, p. e2218523120, Feb. 2023, doi: <a href="https://doi.org/10.1073/pnas.2218523120">10.1073/pnas.2218523120</a>.</div>
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">M. Binz and E. Schulz, <span>“Using cognitive psychology to understand GPT-3,”</span> <em>Proceedings of the National Academy of Sciences</em>, vol. 120, no. 6, p. e2218523120, Feb. 2023, doi: <a href="https://doi.org/10.1073/pnas.2218523120">10.1073/pnas.2218523120</a>.</div>
+</div>
+<div id="ref-haerpfer" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">C. Haerpfer, R. Inglehart, A. Moreno, C. Welzel, K. Kizilova, and J. Diez-Medrano, <span>“World values survey: Round seven<span></span>country-pooled datafile.”</span> </div>
+</div>
+<div id="ref-hofstede2005" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">G. Hofstede, <span>“Culture<span>’</span>s recent consequences.”</span> Product &amp; Systems Internationalisation, Inc., 2005. Available: <a href="https://3-4">3-4</a></div>
+</div>
+<div id="ref-tamkin" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">A. Tamkin, M. Brundage, J. Clark, and D. Ganguli, <span>“Understanding the capabilities, limitations, and societal impact of large language models,”</span> doi: <a href="https://doi.org/10.48550/arXiv.2102.02503">10.48550/arXiv.2102.02503</a>.</div>
+</div>
+<div id="ref-mialon" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">G. Mialon <em>et al.</em>, <span>“Augmented Language Models: a Survey.”</span></div>
 </div>
 <div id="ref-korinek2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">A. Korinek, <span>“Language Models and Cognitive Automation for Economic Research,”</span> 2023.</div>
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">A. Korinek, <span>“Language Models and Cognitive Automation for Economic Research,”</span> 2023.</div>
 </div>
 <div id="ref-miotto" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">M. Miotto, N. Rossberg, and B. Kleinberg, <span>“Who is GPT-3? An Exploration of Personality, Values and Demographics.”</span></div>
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">M. Miotto, N. Rossberg, and B. Kleinberg, <span>“Who is GPT-3? An Exploration of Personality, Values and Demographics.”</span></div>
 </div>
 <div id="ref-aher" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">G. Aher, R. I. Arriaga, and A. T. Kalai, <span>“Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies.”</span></div>
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">G. Aher, R. I. Arriaga, and A. T. Kalai, <span>“Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies.”</span></div>
 </div>
 <div id="ref-horton" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">J. J. Horton, <span>“Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?”</span></div>
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">J. J. Horton, <span>“Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?”</span></div>
 </div>
 <div id="ref-park" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[9] </div><div class="csl-right-inline">J. S. Park, L. Popowski, C. J. Cai, M. R. Morris, P. Liang, and M. S. Bernstein, <span>“Social Simulacra: Creating Populated Prototypes for Social Computing Systems.”</span></div>
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">J. S. Park, L. Popowski, C. J. Cai, M. R. Morris, P. Liang, and M. S. Bernstein, <span>“Social Simulacra: Creating Populated Prototypes for Social Computing Systems.”</span></div>
 </div>
 <div id="ref-argyle" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">L. P. Argyle <em>et al.</em>, <span>“AI Chat Assistants can Improve Conversations about Divisive Topics.”</span></div>
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">L. P. Argyle <em>et al.</em>, <span>“AI Chat Assistants can Improve Conversations about Divisive Topics.”</span></div>
 </div>
 </div>
 </section>
