@@ -108,7 +108,7 @@ div.csl-indent {
   <li><a href="#future-development" id="toc-future-development" class="nav-link" data-scroll-target="#future-development">Future Development</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="survey_files/survey.pdf" target="_blank"><i class="bi bi-file-pdf"></i>PDF (arxiv)</a></li><li><a href="survey_files/survey.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="survey_files/survey.pdf" target="_blank"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="survey_files/survey.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -119,11 +119,11 @@ div.csl-indent {
 <h1>Motivations</h1>
 <p>We built Survey withe following motivations in mind:</p>
 <ul>
-<li><p>AI alignment in complex social context is <strong>important</strong>, especially when AI systems make decisions or assist people in making decisions in complex settings where there may be no true “right” answer (i.e., where “right” is contextual to the specific information of the real-world situation).</p></li>
-<li><p>Doing survey and experiments, despite shortcomings, is still a <strong>widely</strong> adopted method to study social behaviors, including alignments <span class="citation" data-cites="bhattacherjee"><a href="#ref-bhattacherjee" role="doc-biblioref">[1]</a></span>. Language model evaluation frameworks are essentially survey/experiment models <span class="citation" data-cites="openai/e"><a href="#ref-srivastava_beyond_2022" role="doc-biblioref">[3]</a></span>.</p></li>
-<li><p>Applying the survey approach to systematically analyzing ALMs’ alignment behaviors is therefore desirable. ALMs are the most advanced AI systems with general reasoning capability, and the have been increasingly operating in complex social context with emergent behaviors not expected before.</p></li>
-<li><p>Being able to learn from ALM’s feedback to <strong>improve</strong> survey/experiment design is a great application of ALMs, thus helping researchers to construct quality survey frameworks at a fraction of the resources and time that would be otherwise required when humans have to do everything.</p></li>
-<li><p>Survey is the <strong>first</strong> platform delivering robust results for the above value propositions.</p></li>
+<li><p>AI alignment in complex social context is <em>important</em>, especially when AI systems make decisions or assist people in making decisions in complex settings where there may be no true “right” answer (i.e., where “right” is contextual to the specific information of the real-world situation).</p></li>
+<li><p>Doing survey and experiments, despite shortcomings, is still a <em>widely</em> adopted method to study social behaviors, including alignments <span class="citation" data-cites="bhattacherjee"><a href="#ref-bhattacherjee" role="doc-biblioref">[1]</a></span>. Language model evaluation frameworks are essentially survey/experiment models <span class="citation" data-cites="openai/e"><a href="#ref-srivastava_beyond_2022" role="doc-biblioref">[3]</a></span>.</p></li>
+<li><p>Applying the survey approach to <em>systematically</em> analyzing ALMs’ alignment behaviors is therefore desirable. ALMs are the most advanced AI systems with general reasoning capability, and the have been increasingly operating in complex social context with emergent behaviors not expected before.</p></li>
+<li><p>Being able to learn from ALM’s feedback to <em>improve</em> survey/experiment design is a great application of ALMs, thus helping researchers to construct quality survey frameworks at a fraction of the resources and time that would be otherwise required when humans have to do everything.</p></li>
+<li><p>Survey is the first platform delivering robust results for the above value propositions.</p></li>
 </ul>
 </section>
 <section id="introduction" class="level1">
@@ -138,7 +138,27 @@ div.csl-indent {
 </section>
 <section id="platform-design" class="level1">
 <h1>Platform Design</h1>
-<p>To be continued…</p>
+<p>The design of our platform is guided by several key principles centered around efficiency, flexibility, and user privacy.</p>
+<p><strong>Put Researchers First:</strong> This principle is the cornerstone of our design framework. The goal is to make the researcher’s interaction with the platform as intuitive and seamless as possible, hiding the complexity of the underlying operations. From parameter configuration to document and data processing, we aim to create an environment that empowers the user to focus solely on their research questions. To achieve this, prompt engineering and model API calls will be handled internally by the platform, abstracting the process and reducing the technical knowledge necessary to operate the tool effectively.</p>
+<p><strong>Be Systematic:</strong> A systematic approach to parameter configuration is crucial to accommodate a diverse range of research scenarios. With the flexibility to modify parameters as per the needs of the study, the platform allows researchers to experiment and customize the models’ responses, thereby facilitating a broader spectrum of research.</p>
+<p><strong>Be Consistent:</strong> Consistency is paramount for any research work. As such, the platform will ensure that the GPT models produce consistent responses to survey questions in terms of answer formats and compliance with other instructions. This consistency will foster reproducibility and the reliability of research findings.</p>
+<p><strong>Respect Privacy:</strong> With the rise of data breaches, privacy protection is a critical concern for users. On our platform, user data will be retained only during active sessions. Upon session termination, all data will be purged except for the basic user credentials. This ensures that users’ privacy and data security are upheld without compromising the platform’s functionality.</p>
+<p><strong>Safe Worse Case:</strong> The platform will provide robustness against system errors, particularly those caused by API rate limits. Should an error occur, the platform will ensure that all simulation data leading up to the error are preserved. This principle allows for seamless recovery, ensuring users’ work is never lost and fostering trust in the platform’s reliability.</p>
+<p>Based on these principles, Survey was built with several components as shown in Figure 1.</p>
+<div id="platform-components" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="design.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Key components of the platform design</figcaption>
+</figure>
+</div>
+<p>The platform’s architecture consists of several key components designed to enhance user interaction and facilitate research.</p>
+<p><strong>Front End Interface:</strong> The interface serves as the gateway for users to interact with the platform. It allows for easy parameter configurations, document uploads, and provides real-time monitoring metrics and a data viewer. The interface is designed to be user-friendly and intuitive, minimizing the learning curve for new users.</p>
+<p><strong>Metrics:</strong> This component offers real-time monitoring for concurrent API calls. It helps users keep track of their usage, understand any system restrictions, and plan their work accordingly.</p>
+<p><strong>Databases:</strong> Two types of databases are incorporated: one for storing user credentials and another for per-user simulation data. This separation is designed to enhance data security and privacy, as well as to provide a smooth user experience by keeping all relevant data at hand.</p>
+<p><strong>Agents:</strong> These are the core operational units of the platform. Each agent possesses a profile constructed from parameter configurations and a set of interfaces for interaction with the metrics monitor, databases, and GPT models. The agent serves as a conduit, ensuring efficient and error-free data flow within the platform.</p>
+<p><strong>Document processing:</strong> This component processes survey document uploaded by the user, check for their consistency, and prepare them in format that’s convenient for user to inspect through the data viewer on the frontend interface. This component also process completed simulation data and transform them into formats for the frontend data viewer and download.</p>
+<p><strong>Request handler:</strong> This component manages the complexity of prompt engineering and concurrent API calls. It allows the user to communicate with the GPT models seamlessly and ensures all prompts are correctly formatted and successfully sent. It also manages API call volume to prevent rate limit violations. Another important feature of this component is the handling of retry failures due to rate limit and API request errors. In the face of these failures, the handler will automatically process the last safe survey results and return them in proper formats for the agents to process further.</p>
+<p>The framework proposed herein provides an effective and user-friendly platform for researchers to interact with GPT models. It upholds crucial principles such as user-first orientation, systematic and consistent operations, privacy respect, and safety in worst-case scenarios. Furthermore, it features robust components including a simple front-end interface, a real-time metrics monitor, secure databases, efficient agents, and a smart requests manager, all engineered to make complex survey research a breeze. This platform holds the potential to revolutionize how researchers engage with GPT models, offering a unique blend of flexibility, efficiency, and reliability.</p>
 </section>
 <section id="applications" class="level1">
 <h1>Applications</h1>
