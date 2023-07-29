@@ -52,7 +52,7 @@ div.csl-indent {
 <link data-mode="light" href="surveylm_files/libs/bootstrap/bootstrap.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 </head>
 <body>
-<header class="quarto-title-block default page-columns page-full" id="title-block-header">
+<header class="quarto-title-block default toc-left page-columns page-full" id="title-block-header">
 <div class="quarto-title-banner page-columns page-full">
 <div class="quarto-title column-body">
 <h1 class="title">SurveyLM: a platform to explore emerging value perspectives in Augmented Language Models’ behaviors</h1>
@@ -89,8 +89,8 @@ div.csl-indent {
 <p>This white paper presents our work on SurveyLM, a platform for analyzing augmented language models’s (ALMs) emergent alignment behaviours through their attitude and value perspectives.</p>
 </div>
 </div>
-</header><div class="page-columns page-rows-contents page-layout-article" id="quarto-content">
-<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+</header><div class="page-columns page-rows-contents page-layout-article toc-left" id="quarto-content">
+<div class="sidebar toc-left" id="quarto-sidebar-toc-left">
 <nav class="toc-active" id="TOC" role="doc-toc">
 <h2 id="toc-title">Table of contents</h2>
 <ul>
@@ -102,6 +102,8 @@ div.csl-indent {
 <li><a class="nav-link" data-scroll-target="#references" href="#references" id="toc-references"><strong>References</strong></a></li>
 </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="surveylm_files/surveylm.pdf" target="_blank"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="surveylm_files/surveylm.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+</div>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 <section class="level1" id="sec-intro">
@@ -144,11 +146,11 @@ div.csl-indent {
 </div>
 <p>The platform’s architecture consists of several key components designed to enhance user interaction and facilitate research.</p>
 <p><strong>Frontend Interface:</strong> The interface serves as the gateway for users to interact with the platform. It allows for easy parameter configurations, document uploads, and provides real-time monitoring metrics and a data viewer. The interface is designed to be user-friendly and intuitive, minimizing the learning curve for new users.</p>
-<p><strong>Metrics:</strong> This component offers real-time monitoring for concurrent API calls. It helps users keep track of their usage, understand any system restrictions, and plan their work accordingly.</p>
 <p><strong>Databases:</strong> Two types of databases are incorporated: one for storing user credentials and another for per-user simulation data. This separation is designed to enhance data security and privacy, as well as to provide a smooth user experience by keeping all relevant data at hand.</p>
-<p><strong>Agents:</strong> These are the core operational units of the platform. Each agent possesses a profile constructed from parameter configurations and a set of interfaces for interaction with the metrics monitor, databases, and GPT models. The agent serves as a conduit, ensuring efficient and error-free data flow within the platform. The agents constitute an interface that internalizes the complexity of prompt engineering and related operations needed to ensure that the LLMs behave consistently in term of the structure of their response.</p>
-<p><strong>Document and Data Processing:</strong> This component processes survey document uploaded by the user, check for their consistency, and prepare them in format that’s convenient for user to inspect through the data viewer on the frontend interface. This component also process completed simulation data and transform them into formats for the frontend data viewer and download.</p>
-<p><strong>Request Handler:</strong> This component manages the complexity of prompt engineering and concurrent API calls. It allows the user to communicate with the GPT models seamlessly and ensures all prompts are correctly formatted and successfully sent. It also manages API call volume to prevent rate limit violations. Another important feature of this component is the handling of retry failures due to rate limit and API request errors. In the face of these failures, the handler will automatically process the last safe survey results and return them in proper formats for the agents to process further.</p>
+<p><strong>Backend interface:</strong> This is where a request is started and ended. The backend interface is responsible for authenticating users, processing simulation input data and sending survey data to the frontend listener. It executes these tasks through appropriate interface calls to the user credential database and the simulation component.</p>
+<p><strong>Simulation:</strong> This is where a survey process starts and ends. The simulation component is responsible for processing uploaded documents, constructing, creating request data, initialize the concurrent request handler, and update metrics data for the frontend metrics listener. Each agent possesses a profile constructed from parameter configurations and a set of interfaces for interaction with the metrics monitor, databases, and GPT models. The simulation component serves as a conduit, ensuring efficient and error-free data flow within the platform. It also internalizes the complexity of prompt engineering and related operations needed to ensure that the LLMs behave consistently in term of the structure of their response.</p>
+<p><strong>Request data:</strong> This component stores agent data and request data in an optimal format created by the simulation component. It also serves as a streaming data source to avoid unnecessary, and costly, memory consumption that would take place while concurrent api calls are made for each agent’s request.</p>
+<p><strong>Request Handler:</strong> This component manages the complexity of prompt engineering and concurrent API calls. It allows the simulation process to communicate with the GPT models seamlessly and ensures all prompts are correctly structured and successfully sent. It also manages API calls to reduce the chance of hitting rate limits frequently while ensuring that a simulation on large scale (e.g. one with 1000 agents) can run as fast as it could. Another important feature of this component is the handling of retry failures due to rate limit and API request errors. In the face of these failures, the handler will automatically process the last safe survey results and return them in proper formats for the agents to process further.</p>
 </section>
 <section class="level1" id="applications">
 <h1>Applications</h1>
