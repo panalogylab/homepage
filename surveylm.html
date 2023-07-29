@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.156">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran">
-<meta name="keywords" content="Social Science, Social AI, Large Language Models, Augmented Language Models, Alignment Research, Survey Method, Experimental Method">
-
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.4.156" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<meta content="Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran" name="author"/>
+<meta content="Social Science, Social AI, Large Language Models, Augmented Language Models, Alignment Research, Survey Method, Experimental Method" name="keywords"/>
+<meta content="Panalogy Lab Technical Report 23-001" name="description"/>
 <title>SurveyLM: a platform to explore emerging value perspectives in Augmented Language Models’ behaviors</title>
 <style>
 code{white-space: pre-wrap;}
@@ -42,146 +40,132 @@ div.csl-right-inline {
 div.csl-indent {
   margin-left: 2em;
 }</style>
-
-
 <script src="surveylm_files/libs/clipboard/clipboard.min.js"></script>
 <script src="surveylm_files/libs/quarto-html/quarto.js"></script>
 <script src="surveylm_files/libs/quarto-html/popper.min.js"></script>
 <script src="surveylm_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="surveylm_files/libs/quarto-html/anchor.min.js"></script>
-<link href="surveylm_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="surveylm_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="surveylm_files/libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="surveylm_files/libs/quarto-html/quarto-syntax-highlighting.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="surveylm_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="surveylm_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="surveylm_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-
-
+<link href="surveylm_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link data-mode="light" href="surveylm_files/libs/bootstrap/bootstrap.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 </head>
-
 <body>
-
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">SurveyLM: a platform to explore emerging value perspectives in Augmented Language Models’ behaviors</h1>
-                      </div>
-  </div>
-    
-  <div class="quarto-title-meta-author">
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
-    
-      <div class="quarto-title-meta-contents">
-      <p class="author"><a href="https://panalogy-lab.com">Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran</a> </p>
-    </div>
-      <div class="quarto-title-meta-contents">
-          <p class="affiliation">
+<header class="quarto-title-block default page-columns page-full" id="title-block-header">
+<div class="quarto-title-banner page-columns page-full">
+<div class="quarto-title column-body">
+<h1 class="title">SurveyLM: a platform to explore emerging value perspectives in Augmented Language Models’ behaviors</h1>
+<div>
+<div class="description">
+          Panalogy Lab Technical Report 23-001
+        </div>
+</div>
+</div>
+</div>
+<div class="quarto-title-meta-author">
+<div class="quarto-title-meta-heading">Author</div>
+<div class="quarto-title-meta-heading">Affiliation</div>
+<div class="quarto-title-meta-contents">
+<p class="author"><a href="https://panalogy-lab.com">Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran</a> </p>
+</div>
+<div class="quarto-title-meta-contents">
+<p class="affiliation">
               Panalogy Lab
             </p>
-        </div>
-      </div>
-
-  <div class="quarto-title-meta">
-
-        
-    
-      
-    </div>
-    
-  <div>
-    <div class="abstract">
-      <div class="abstract-title">Abstract</div>
-      <p>This white paper presents our work on SurveyLM, a platform for analyzing augmented language models’s (ALMs) emergent alignment behaviours through their attitude and value perspectives.</p>
-    </div>
-  </div>
-  
-  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link active" data-scroll-target="#sec-intro">Motivations</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#platform-design" id="toc-platform-design" class="nav-link" data-scroll-target="#platform-design">Platform Design</a></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a></li>
-  <li><a href="#future-developments" id="toc-future-developments" class="nav-link" data-scroll-target="#future-developments">Future Developments</a>
-  <ul class="collapse">
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="surveylm_files/surveylm.pdf" target="_blank"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="survey_files/surveylm.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+</div>
+</div>
+<div class="quarto-title-meta">
+<div>
+<div class="quarto-title-meta-heading">Published</div>
+<div class="quarto-title-meta-contents">
+<p class="date">29.07.2023</p>
+</div>
+</div>
+</div>
+<div>
+<div class="abstract">
+<div class="abstract-title">Abstract</div>
+<p>This white paper presents our work on SurveyLM, a platform for analyzing augmented language models’s (ALMs) emergent alignment behaviours through their attitude and value perspectives.</p>
+</div>
+</div>
+</header><div class="page-columns page-rows-contents page-layout-article" id="quarto-content">
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#sec-intro" href="#sec-intro" id="toc-sec-intro">Motivations</a></li>
+<li><a class="nav-link" data-scroll-target="#introduction" href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a class="nav-link" data-scroll-target="#platform-design" href="#platform-design" id="toc-platform-design">Platform Design</a></li>
+<li><a class="nav-link" data-scroll-target="#applications" href="#applications" id="toc-applications">Applications</a></li>
+<li><a class="nav-link" data-scroll-target="#future-developments" href="#future-developments" id="toc-future-developments">Future Developments</a></li>
+<li><a class="nav-link" data-scroll-target="#references" href="#references" id="toc-references"><strong>References</strong></a></li>
+</ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="surveylm_files/surveylm.pdf" target="_blank"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="surveylm_files/surveylm.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">
-
-
-
-
-<section id="sec-intro" class="level1">
+<section class="level1" id="sec-intro">
 <h1>Motivations</h1>
 <p>We built SurveyLM with the following motivations in mind:</p>
 <ul>
 <li><p>AI alignment in complex social context is <em>important</em>, especially when AI systems make decisions or assist people in making decisions in complex settings where there may be no true “right” answer or where an answer is heavily dependent on contextual factors (specific information in real-world situations).</p></li>
-<li><p>Surveys and experiments, despite some shortcomings, are a <em>widely</em> adopted methods to study social behaviors, including alignment <span class="citation" data-cites="bhattacherjee_social_2012">(<a href="#ref-bhattacherjee_social_2012" role="doc-biblioref">Bhattacherjee, 2012</a>)</span>. Language model evaluation frameworks are essentially survey/experiment models <span class="citation" data-cites="openai_openaievals_2023 srivastava_beyond_2022">(<a href="#ref-openai_openaievals_2023" role="doc-biblioref">OpenAI, 2023</a>; <a href="#ref-srivastava_beyond_2022" role="doc-biblioref">Srivastava et al., 2022</a>)</span>, and therefore, also powerful for conducting research and gaining insights.</p></li>
-<li><p>Augmented language models (ALMs) <span class="citation" data-cites="mialon_augmented_2023">(<a href="#ref-mialon_augmented_2023" role="doc-biblioref">Mialon et al., 2023</a>)</span> are AI systems that have the most advanced general reasoning capability for a diverse range of complex social contexts.</p></li>
-<li><p>Applying the survey approach to <em>systematically</em> analyzing ALMs’ alignment behaviors is therefore valuable and desirable. ALMs are the most advanced AI systems with general reasoning capability, and they have been increasingly operating in complex social context with emergent behaviors (not expected before).</p></li>
+<li><p>The application of survey and experimental methodologies, which are extensively utilized to study social behaviors, can greatly enhance the effectiveness of language model evaluation frameworks. These approaches can provide valuable insights into the behavior and alignment of the models, particularly when implemented in a <em>systematic</em> manner.</p></li>
+<li><p>Augmented language models (ALMs) are AI systems that currently have the most advanced general reasoning capability and are increasingly functioning within diverse and intricate social scenarios, exhibiting emergent behaviors that were previously unexpected. Therefore, it is desirable to apply survey and experimental methodologies to not only unravel the factors influencing these emergent behaviors, but also to ensure these ALMs are adapting and aligning with human intentions and expectations, thus contributing to the responsible development and deployment of advanced AI systems.</p></li>
 <li><p>Being able to learn from ALM’s feedback to <em>improve</em> survey/experiment designs is a great and underexplored application of ALMs, thus helping researchers to construct high quality survey frameworks at a fraction of the resources and time that would be otherwise required (past approach where humans have been doing everything).</p></li>
-<li><p>SurveyLM is to our knowledge the first platform delivering robust results for the above value propositions.</p></li>
+<li><p>SurveyLM aims to be the first platform to deliver robust results for the above value propositions.</p></li>
 </ul>
 </section>
-<section id="introduction" class="level1">
+<section class="level1" id="introduction">
 <h1>Introduction</h1>
 <p>Our new platform, <strong>SurveyLM</strong>, aims to explore emerging value perspectives in Augmented Language Models (ALMs) <span class="citation" data-cites="mialon_augmented_2023">(<a href="#ref-mialon_augmented_2023" role="doc-biblioref">Mialon et al., 2023</a>)</span> through decision premises and contextuality in complex social settings. We chose to focus on complex social settings because these environments present a wide array of situations and (social) dilemmas that help assessing the multifaceted and nuanced value judgments that ALMs have to make in the real world. As a result, we can better understand their decision-making mechanisms and the underlying value systems they rely on.</p>
 <p>Our approach to exploring ALM’s behaviors, and their value perspectives, is based on presenting the models with complex sets of survey questions and experimental settings then analyzing their responses in various contexts. We opted for a survey-based approach as it has been proven to be an effective method for probing and value elicitation of ALMs <span class="citation" data-cites="arora_probing_2023 binz_using_2023">(<a href="#ref-arora_probing_2023" role="doc-biblioref">Arora et al., 2023</a>; <a href="#ref-binz_using_2023" role="doc-biblioref">Binz &amp; Schulz, 2023</a>)</span>. Human value elicitation has always been an important research avenue <span class="citation" data-cites="haerpfer_world_2021 hofstede_cultures_2005">(<a href="#ref-haerpfer_world_2021" role="doc-biblioref">Haerpfer et al., 2021</a>; <a href="#ref-hofstede_cultures_2005" role="doc-biblioref">Hofstede, 2005</a>)</span>, as an individual’s identity and values often manifest in the choices and decisions they make. Given the increasing role of ALMs as agents interacting with humans who act as principals (i.e., principal-agent relationship in nature), it becomes crucial to comprehend the underlying values of these models and their implications for recommendations and decision-making processes, which may or may not align with those of human principals. By allowing the models to respond to a series of contextualized questions, we can gain valuable insights into how they navigate ethical scenarios and prioritize differing values for different principal profiles and characteristics (e.g., age, gender, ethnicity, country of residence, etc.).</p>
 <p>The first key aspect we address is the question of why understanding ALM’s value perspectives matters in alignment research. By examining the context-dependent values that drive ALMs’ behaviours, we gain valuable insights into the ethical and moral frameworks and traces that shape their decision-making processes (as well as our own). These insights can help us align ALMs with (context-specific) human values and promote responsible AI development <span class="citation" data-cites="tamkin_understanding_2021">(<a href="#ref-tamkin_understanding_2021" role="doc-biblioref">Tamkin et al., 2021</a>)</span>.</p>
-<p>Defining measures of values is another crucial element of our platform, SurveyLM. We recognize that values are multifaceted and subjective, making their quantification challenging. Through rigorous research and analysis, we aim to develop and translate robust methodologies to define and measure values in the context of ALMs. This will provide a solid foundation for studying and understanding their behavior patterns in complex social settings.</p>
-<p>To effectively explore emerging value perspectives in ALMs’ behaviors, we employ state-of-the-art (SOTA) ALM simulation techniques. By simulating ALMs in realistic scenarios, we can observe their decision-making processes and identify any evolving biases or value systems. This knowledge is crucial for staying ahead of potential risks and ensuring the responsible development of AI technologies.</p>
-<p>The potential applications of our platform extend beyond the fields of behavioural economics, cognitive psychology, or market research. We envision leveraging the insights gained to help drive social AI alignment and design in research, industry and community alike. By aligning AI systems with human values, we can (co-)create social AI systems that complement and enhance lives, benefiting society as a whole.</p>
-<p>To effectively explore emerging value perspectives in ALMs’ behaviors, we employ state-of-the-art (SOTA) ALM simulation techniques. By simulating ALMs in realistic scenarios, we can observe their decision-making processes and identify any evolving biases or value systems. This knowledge is crucial for staying ahead of potential risks and ensuring the responsible development of AI technologies.</p>
+<p>Defining measures of values is another crucial aspect of our platform, SurveyLM. We recognize that values are multifaceted and subjective, making their quantification challenging. Human values, as well as AI alignment to these values, evolve over time and iterations, necessitating a continuously adaptive approach. Through rigorous research and analysis, we aim to develop and translate robust methodologies to define and measure values in the context of ALMs, and to discern trends and shifts in ALMs value systems and alignment. This will provide a solid foundation for studying and understanding their behavior patterns in complex social settings.</p>
+<p>To effectively explore emerging value perspectives in ALMs’ behaviors, we employ state-of-the-art ALM simulation techniques. By simulating ALMs in realistic scenarios, we can observe their decision-making processes and identify any evolving biases or value systems. This knowledge is crucial for staying ahead of potential risks and ensuring the responsible development of AI technologies.</p>
 <p>The potential applications of our platform extend beyond the fields of behavioural economics, cognitive psychology, management or market research. We envision leveraging the insights gained to help drive social AI alignment and design in research, industry and community alike. By aligning AI systems with human values, we can (co-)create social AI systems that complement and enhance lives, benefiting society as a whole.</p>
 <p>Overall, our framework proposed provides an effective and user-friendly platform for researchers to interact with GPT models. It upholds crucial principles such as user-first orientation, systematic and consistent operations, privacy respect, and safety in worst-case scenarios. Furthermore, it features robust components including a simple front-end interface, a real-time metrics monitor, secure databases, efficient agents, and a smart requests manager, all engineered to make complex survey research a breeze. We hope that this platform holds the potential to revolutionize how researchers engage with GPT models, offering a unique blend of flexibility, efficiency, and reliability.</p>
-<p>In conclusion, our platform SurveyLM offers a unique opportunity to explore and understand the emerging value perspectives in ALMs’ behaviors. By addressing the questions of why values matter, defining measures of values, and simulating ALMs in complex social settings, we can unlock insights that will help shape the future of AI development. With a focus on social AI alignment and design, we aim to create long-lived, complex social AI agents and systems that align with human values, promoting a responsible and beneficial integration of AI into industry and society.</p>
+<p>In conclusion, our platform SurveyLM offers a unique opportunity to explore and understand the emerging value perspectives from ALMs’ behaviors. By addressing the questions of why values matter, defining measures of values, and simulating ALMs in complex social settings, we can generate insights that will help shape the future of AI development. With a focus on social AI alignment and design, we aim to create long-lived, complex social AI agents and systems that align with human values, promoting a responsible and beneficial integration of AI into industry and society.</p>
 </section>
-<section id="platform-design" class="level1">
+<section class="level1" id="platform-design">
 <h1>Platform Design</h1>
 <p>The design of our platform is guided by several key principles centered around efficiency, flexibility, and user privacy.</p>
 <p><strong>Put Researchers First:</strong> This principle is the cornerstone of our design framework. The goal is to make the researcher’s interaction with the platform as intuitive and seamless as possible, reducing the complexity of the underlying operations. From parameter configuration to document and data processing, we aim to create an environment that empowers the user to focus solely on their research questions and outcomes. To achieve this, complex prompt engineering and API request handling will be handled internally by the platform, abstracting the process and reducing the technical knowledge necessary to operate the tool effectively.</p>
 <p><strong>Respect Research Logic:</strong> We design the platform in such a way that, despite layers of operational complexity, keeps the research logic intact by translating parameter configurations into prompt structures that ensure LLMs’ responses would be shaped by only those configurations. This is achieved by giving researchers freedom in defining transparently what comes into and what comes out of a simulation process. Whereas, the platform focuses on building optimal prompt structure and request handling by using researchers’ inputs with minimal additional content needed to interface consistently with LLMs.</p>
-<p><strong>Be Systematic:</strong> A systematic approach to parameter configuration is crucial to accommodate a diverse range of research scenarios. With the flexibility to modify parameters as per the needs of the study, the platform allows researchers to experiment and customize the models’ responses, thereby facilitating a broader spectrum of research.</p>
-<p><strong>Be Consistent:</strong> Consistency is paramount for any research work. As such, the platform will ensure that the GPT models produce consistent responses to survey questions in terms of answer formats and compliance with other instructions. This consistency will foster reproducibility and the reliability of research findings.</p>
-<p><strong>Respect Privacy:</strong> With the rise of data breaches, privacy protection is a critical concern for users. On our platform, user data will be retained only during active sessions. Upon session termination, all data will be purged except for the basic user credentials. This ensures that users’ privacy and data security are upheld without compromising the platform’s functionality.</p>
+<p><strong>Be Systematic Yet Flexible:</strong> A systematic approach to parameter configuration is crucial to accommodate a diverse range of research scenarios. With the flexibility to modify parameters as per the needs of the study, the platform allows researchers to experiment and customize the models’ responses, thereby facilitating a broader spectrum of research.</p>
+<p><strong>Embrace Consistency and Dynamism:</strong> Consistency is paramount for any research work. As such, the platform will ensure that the GPT models produce consistent responses to survey questions in terms of answer formats and compliance with other instructions. At the same time, we recognize the evolving nature of AI, incorporating the dynamic aspect of learning and growth in AI models to our consistency ethos. Balancing these elements enhances not just the reproducibility, but also the adaptive validity and reliability of our research findings.</p>
+<p><strong>Respect Privacy and Data Control:</strong> With the rise of data breaches, privacy protection is a critical concern for users. On our platform, we uphold the principle of data control, retaining user data exclusively until such time as the user decides to delete it. Upon deletion, all data will be purged except for the basic user credentials. This ensures that users’ privacy and data security are upheld without compromising the platform’s functionality.</p>
 <p><strong>Safe Worse Case:</strong> The platform will provide robustness against system errors, particularly those caused by API rate limits. Should an error occur, the platform will ensure that all simulation data leading up to the error are preserved. Additionally, any uncompleted operations will also be recorded and sent to the user for further decision making. This principle allows for seamless recovery, ensuring users’ work is never lost and fostering trust in the platform’s reliability.</p>
 <p>Based on these principles, SurveyLM was built with several components as shown in Figure 1.</p>
-<div id="platform-components" class="quarto-figure quarto-figure-center anchored">
+<div class="quarto-figure quarto-figure-center anchored" id="platform-components">
 <figure class="figure">
-<p><img src="surveylm_files/design.png" alt="design framework" class="img-fluid figure-img"></p>
+<p><img alt="platform design" class="img-fluid figure-img" src="surveylm_files/design.png"/></p>
 <figcaption class="figure-caption">Key components of the platform design</figcaption>
 </figure>
 </div>
 <p>The platform’s architecture consists of several key components designed to enhance user interaction and facilitate research.</p>
-<p><strong>Front End Interface:</strong> The interface serves as the gateway for users to interact with the platform. It allows for easy parameter configurations, document uploads, and provides real-time monitoring metrics and a data viewer. The interface is designed to be user-friendly and intuitive, minimizing the learning curve for new users.</p>
+<p><strong>Frontend Interface:</strong> The interface serves as the gateway for users to interact with the platform. It allows for easy parameter configurations, document uploads, and provides real-time monitoring metrics and a data viewer. The interface is designed to be user-friendly and intuitive, minimizing the learning curve for new users.</p>
 <p><strong>Metrics:</strong> This component offers real-time monitoring for concurrent API calls. It helps users keep track of their usage, understand any system restrictions, and plan their work accordingly.</p>
 <p><strong>Databases:</strong> Two types of databases are incorporated: one for storing user credentials and another for per-user simulation data. This separation is designed to enhance data security and privacy, as well as to provide a smooth user experience by keeping all relevant data at hand.</p>
-<p><strong>Agents:</strong> These are the core operational units of the platform. Each agent possesses a profile constructed from parameter configurations and a set of interfaces for interaction with the metrics monitor, databases, and GPT models. The agent serves as a conduit, ensuring efficient and error-free data flow within the platform. The agents constitute an interface that hides the complexity of prompt engineering and related operations needed to ensure that the LLMs behave consistently in term of the structure of their response.</p>
-<p><strong>Document processing:</strong> This component processes survey document uploaded by the user, check for their consistency, and prepare them in format that’s convenient for user to inspect through the data viewer on the frontend interface. This component also process completed simulation data and transform them into formats for the frontend data viewer and download.</p>
-<p><strong>Request handler:</strong> This component manages the complexity of prompt engineering and concurrent API calls. It allows the user to communicate with the GPT models seamlessly and ensures all prompts are correctly formatted and successfully sent. It also manages API call volume to prevent rate limit violations. Another important feature of this component is the handling of retry failures due to rate limit and API request errors. In the face of these failures, the handler will automatically process the last safe survey results and return them in proper formats for the agents to process further.</p>
+<p><strong>Agents:</strong> These are the core operational units of the platform. Each agent possesses a profile constructed from parameter configurations and a set of interfaces for interaction with the metrics monitor, databases, and GPT models. The agent serves as a conduit, ensuring efficient and error-free data flow within the platform. The agents constitute an interface that internalizes the complexity of prompt engineering and related operations needed to ensure that the LLMs behave consistently in term of the structure of their response.</p>
+<p><strong>Document and Data Processing:</strong> This component processes survey document uploaded by the user, check for their consistency, and prepare them in format that’s convenient for user to inspect through the data viewer on the frontend interface. This component also process completed simulation data and transform them into formats for the frontend data viewer and download.</p>
+<p><strong>Request Handler:</strong> This component manages the complexity of prompt engineering and concurrent API calls. It allows the user to communicate with the GPT models seamlessly and ensures all prompts are correctly formatted and successfully sent. It also manages API call volume to prevent rate limit violations. Another important feature of this component is the handling of retry failures due to rate limit and API request errors. In the face of these failures, the handler will automatically process the last safe survey results and return them in proper formats for the agents to process further.</p>
 </section>
-<section id="applications" class="level1">
+<section class="level1" id="applications">
 <h1>Applications</h1>
 <p>With the emergent capabilities of Large Language Models (LLMs) and the ongoing development of Augmented Language Models (ALMs), understanding the underlying premises that govern their behaviors and decision-making processes becomes increasingly crucial, especially when they operate in complex social settings and have real-world impact. This understanding is essential to ensure the alignment of social AI with human values.</p>
 <p>ALMs, which are essentially built on top of pre-trained LLMs like gpt-4, incorporate various elements such as retrieval plug-ins, different learning techniques (few-shot), diverse prompting methods (such as chain-of-thought, self-model, and contextual prompts), functional coding, and integration with other modalities like voice, vision, and sound <span class="citation" data-cites="mialon_augmented_2023">(<a href="#ref-mialon_augmented_2023" role="doc-biblioref">Mialon et al., 2023</a>)</span>. Additionally, future iterations of ALMs are expected to incorporate different AI techniques such as reinforcement learning and symbolic logic, enhancing their knowledge organisation, reasoning, and learning capabilities.</p>
 <p>Researchers have recognized the potential of LLMs as valuable tools to study and probe the human mind and society <span class="citation" data-cites="arora_probing_2023 binz_using_2023 korinek_language_2023-1 miotto_who_2022">(<a href="#ref-arora_probing_2023" role="doc-biblioref">Arora et al., 2023</a>; <a href="#ref-binz_using_2023" role="doc-biblioref">Binz &amp; Schulz, 2023</a>; <a href="#ref-korinek_language_2023-1" role="doc-biblioref">Korinek, 2023</a>; <a href="#ref-miotto_who_2022" role="doc-biblioref">Miotto et al., 2022</a>)</span>, given their training on vast amounts of human data and their ability to generate human-like text. Scholars have also discussed their potential in simulating human subjects <span class="citation" data-cites="aher_using_2023 horton_large_2023 park_social_2022">(<a href="#ref-aher_using_2023" role="doc-biblioref">Aher et al., 2023</a>; <a href="#ref-horton_large_2023" role="doc-biblioref">Horton, 2023</a>; <a href="#ref-park_social_2022" role="doc-biblioref">Park et al., 2022</a>)</span>. Consequently, researchers from various disciplines such as behavioral economics, cognitive psychology, social psychology, linguistics have now started to investigate LLMs’ behavior and decision-making processes and its use as a scientific tool. However, the procedures and tuning of LLMs (e.g., temperature, context window, prompt context and structure) for judgment and evaluation of alignment are not yet standardized or consistently applied across studies. Moreover, digital literacy and programming skills continue to present significant obstacles for many researchers to implement such research robustly at scale, particularly those in behavioral economics and the social sciences.</p>
 <p>Considering the fast-paced nature of research and development in AI at the moment, it is essential to also extend our focus beyond pre-trained LLMs and consider the emergent capabilities and value systems of ALMs within various different social contexts. ALMs are increasingly augmented with additional tools and various prompting techniques, spanning different context windows and incorporating other modalities. Furthermore, these ALMs are now actively performing real-world actions. Calling a tool in the context of ALMs often involves having an impact on the virtual or physical world and observing the resulting effects, which are typically integrated into the ALM’s ongoing context. Moreover, ALMs are increasingly engaging in delegate actions such as carrying out transactions on our behalf or responding to customer queries and emails in human-like ways.</p>
-<p>By acknowledging the advancements in ALMs and the complex nature of their interactions with the world, we can gain a comprehensive understanding of the premises underlying their behaviors and decision-making processes. This knowledge is crucial for ensuring the development of responsible and aligned social AI systems that reflect human values for the benefit of all humankind.</p>
+<p>By acknowledging the advancements in ALMs and the complex nature of their interactions with the world, we can gain a comprehensive understanding of the premises underlying their behaviors and decision-making processes by benchmarking through survey and experimental methods. This knowledge is crucial for ensuring the development of responsible and aligned social AI systems that reflect human values for the benefit of all humankind.</p>
 <p>SurveyLM facilitates this exploration in an easy and intuitive manner. It empowers researchers to investigate the behaviors and decision-making of LLMs and ALMs in a robust and systematic way, using an easy-to-use, click-and-play online interface.</p>
 <p>The SurveyLM platform is highly versatile and adaptable to a multitude of decision-making scenarios and experimental settings. Here are just some potential applications:</p>
 <ol type="1">
-<li><p><strong>Survey Data Generation</strong>: Simulate agents to answer an array of survey questions, creating a rich dataset that can mimic human responses to these questions. This can be particularly useful in preliminary research phases, hypothesis testing, or for enhancing existing datasets.</p></li>
+<li><p><strong>Survey Data Generation</strong>: Simulate agents to answer an array of survey questions, creating a rich dataset that can mimic diverse, human-like responses to these questions. This can be particularly useful in preliminary research phases, hypothesis testing, or for enhancing existing datasets.</p></li>
 <li><p><strong>Allocation Games</strong>: Simulate scenarios where agents need to make decisions about resource allocation. This could involve public goods games, bargaining games, prisoner’s dilemma scenarios, or other economic games that explore cooperation, competition, and negotiation.</p></li>
 <li><p><strong>Cognitive Psychology Experiments and (Multi-Stage) Scenarios</strong>: Simulate cognitive tasks and adaptation processes to understand decision-making processes, memory, attention, perception, and problem-solving strategies.</p></li>
 <li><p><strong>Social Interaction Simulations</strong>: Model and simulate complex social interactions within groups, examining phenomena like group dynamics, communication patterns, social influence, and conformity.</p></li>
 <li><p><strong>Consumer Behaviour Analysis</strong>: Simulate buying decisions of agents to understand patterns in consumer behaviour, product preferences, and purchase rationales.</p></li>
-<li><p><strong>Policy Impact Analysis</strong>: Simulate reactions to new policies or regulations to gauge potential public response and impact.</p></li>
+<li><p><strong>Policy Impact Analysis</strong>: Simulate reactions to new policies or regulations to gauge potential public response and impact (i.e., to understand emergent macro behaviours).</p></li>
 <li><p><strong>Risk-taking (Multi-Stage) Scenarios</strong>: Study decision-making under uncertainty or risk, such as in gambling or investment scenarios.</p></li>
 <li><p><strong>Health-related Decision-making</strong>: Explore choices related to health behaviours, preventative measures, treatment options, etc.</p></li>
 <li><p><strong>Educational Settings</strong>: Understand learning behaviour, knowledge acquisition, and responses to different teaching methods.</p></li>
@@ -204,7 +188,7 @@ div.csl-indent {
 <p>These topics are typically difficult to discuss openly, but SurveyLM provides a secure and confidential platform for exploring them in depth.</p>
 <p>We are confident that as SurveyLM evolves and adapts over time, it will uncover numerous other promising areas of application. The examples provided here represent just a fraction of the platform’s potential, highlighting only the possibilities we, and others in the field, have identified to date. With the rapidly advancing landscape of social science research, there is no doubt that the scope of SurveyLM’s application will continue to expand, revealing even more groundbreaking possibilities in the future.</p>
 </section>
-<section id="future-developments" class="level1">
+<section class="level1" id="future-developments">
 <h1>Future Developments</h1>
 <p>Despite its advanced design and capabilities, our research platform faces certain limitations that we are actively seeking to address. These hurdles present opportunities for enhancement and refinement, contributing to the platform’s ongoing evolution.</p>
 <p><strong>Simplistic Agent Profile Configuration:</strong> A significant limitation lies in the current mechanistic profile configuration for each agent (e.g., you are &lt;AGE&gt;, your personality is &lt;BIG 5 PROFILE&gt;, and reside in &lt;LOCATION&gt;). We do not draw on or attempt to simulate human subjects from demographic backgrounds of past survey respondents, as in e.g., <span class="citation" data-cites="argyle_ai_2023">(<a href="#ref-argyle_ai_2023" role="doc-biblioref">Argyle et al., 2023</a>)</span>. Standard profile constructs often used in survey studies underpin this design, providing a simplified interaction model for users. However, these constructs’ rudimentary nature restricts the context within which the GPT models function, sometimes compromising the depth and richness of their responses. To capture the nuanced, multifaceted nature of human contexts, we need a more sophisticated approach. The solution we are developing and testing is a custom profile prompt feature, which will enable users to create intricate, context-sensitive profiles for their agents (e.g., profile construction by story telling). By broadening the contextual basis of agent profiles, we anticipate an enhancement in the model responses’ relevance and applicability.</p>
@@ -213,59 +197,50 @@ div.csl-indent {
 <p><strong>Realistic Condition Profiles:</strong> A minor drawback of our platform is the occasional generation of unrealistic agent profiles due to the randomness of profile construction. This approach also means that sometimes we end up with “interesting” agent profile combinations that may seldom present in the real world (e.g., a male lesbian). While rare, these cases can disrupt the research process and lead to unrealistic model responses. One solution lies in conditional profile construction, where agent attributes are selected based on real-world prevalence and correlations. However, it is important to note that this randomness can sometimes yield unique case studies that might not have been otherwise considered, offering unexpected insights and interesting research avenues.</p>
 <p><strong>Multi-Agent Games and Interaction:</strong> Currently, SurveyLM allows for the simulation of an agent’s participation in games with other players only when the other players and interaction rules are hard-coded into the uploaded questions and answer instruction. However, we are yet to develop the capacity for interactions between different agents within the same simulated population. To achieve this, a series of sophisticated enhancements would be necessary. Key among these improvements is the ability to form and manage groups of agents. These groups function as independent social entities, engaging in intricate social interactions within their own set boundaries. In this envisioned application, users could define group sizes, roles within these groups (e.g., the proposer and responder roles in the ultimatum game), and any variations thereof. Furthermore, we would offer the ability to set randomisation parameters for both roles and variations, adding yet another layer of complexity and realism to the simulations. Another captivating idea under this future avenue is the introduction of a chat function between different agents. This feature would allow the observation of direct communication patterns and language use within and across agent groups, offering researchers another dimension to their social agent studies.</p>
 <p>In summary, while our platform faces certain limitations, we view these as opportunities for growth and enhancement. Our commitment to continuous development and user satisfaction drives us to persistently explore innovative solutions to these challenges. This means that we are open for feedback and suggestions. As we progress on this journey, we look forward to unlocking further potential in facilitating complex research through advanced ALM models.</p>
+<p>For beta access and further details about the SurveyLM platform, please contact the corresponding author of this paper.</p>
 <div style="page-break-after: always;"></div>
-<section id="references" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="references">References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
-<div id="ref-aher_using_2023" class="csl-entry" role="listitem">
+</section>
+<section class="level1 unnumbered" id="references">
+<h1 class="unnumbered"><strong>References</strong></h1>
+<div class="references csl-bib-body hanging-indent" data-line-spacing="2" id="refs" role="list">
+<div class="csl-entry" id="ref-aher_using_2023" role="listitem">
 Aher, G., Arriaga, R. I., &amp; Kalai, A. T. (2023). <em>Using large language models to simulate multiple humans and replicate human subject studies</em> (<span>arXiv</span>:2208.10264). <span>arXiv</span>. <a href="http://arxiv.org/abs/2208.10264">http://arxiv.org/abs/2208.10264</a>
 </div>
-<div id="ref-argyle_ai_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-argyle_ai_2023" role="listitem">
 Argyle, L. P., Busby, E., Gubler, J., Bail, C., Howe, T., Rytting, C., &amp; Wingate, D. (2023). <em><span>AI</span> chat assistants can improve conversations about divisive topics</em> (<span>arXiv</span>:2302.07268). <span>arXiv</span>. <a href="http://arxiv.org/abs/2302.07268">http://arxiv.org/abs/2302.07268</a>
 </div>
-<div id="ref-arora_probing_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-arora_probing_2023" role="listitem">
 Arora, A., Kaffee, L.-A., &amp; Augenstein, I. (2023). <em>Probing pre-trained language models for cross-cultural differences in values</em> (<span>arXiv</span>:2203.13722). <span>arXiv</span>. <a href="http://arxiv.org/abs/2203.13722">http://arxiv.org/abs/2203.13722</a>
 </div>
-<div id="ref-bhattacherjee_social_2012" class="csl-entry" role="listitem">
-Bhattacherjee, A. (2012). <em>Social science research: Principles, methods, and practices</em>. Global Text Project.
-</div>
-<div id="ref-binz_using_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-binz_using_2023" role="listitem">
 Binz, M., &amp; Schulz, E. (2023). Using cognitive psychology to understand <span>GPT</span>-3. <em>Proceedings of the National Academy of Sciences</em>, <em>120</em>(6), e2218523120. <a href="https://doi.org/10.1073/pnas.2218523120">https://doi.org/10.1073/pnas.2218523120</a>
 </div>
-<div id="ref-haerpfer_world_2021" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-haerpfer_world_2021" role="listitem">
 Haerpfer, C., Inglehart, R., Moreno, A., Welzel, C., Kizilova, K., Diez-Medrano, J., &amp; Puranen. (2021). <em>World values survey: Round seven–country-pooled datafile.</em> <span>JD</span> Systems Institute &amp; <span>WVSA</span> Secretariat, 7, 2021.
 </div>
-<div id="ref-hofstede_cultures_2005" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-hofstede_cultures_2005" role="listitem">
 Hofstede, G. (2005). Culture’s recent consequences. <em>Proceedings of the Seventh International Workshop on Internationalisation of Products and Systems</em>, 3–4.
 </div>
-<div id="ref-horton_large_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-horton_large_2023" role="listitem">
 Horton, J. J. (2023). <em>Large language models as simulated economic agents: What can we learn from homo silicus?</em> (<span>arXiv</span>:2301.07543). <span>arXiv</span>. <a href="http://arxiv.org/abs/2301.07543">http://arxiv.org/abs/2301.07543</a>
 </div>
-<div id="ref-korinek_language_2023-1" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-korinek_language_2023-1" role="listitem">
 Korinek, A. (2023). <em>Language models and cognitive automation for economic research</em> (30957). National Bureau of Economic Research. <a href="https://doi.org/10.3386/w30957">https://doi.org/10.3386/w30957</a>
 </div>
-<div id="ref-mialon_augmented_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-mialon_augmented_2023" role="listitem">
 Mialon, G., Dessì, R., Lomeli, M., Nalmpantis, C., Pasunuru, R., Raileanu, R., Rozière, B., Schick, T., Dwivedi-Yu, J., Celikyilmaz, A., Grave, E., LeCun, Y., &amp; Scialom, T. (2023). <em>Augmented language models: A survey</em> (<span>arXiv</span>:2302.07842). <span>arXiv</span>. <a href="https://doi.org/10.48550/arXiv.2302.07842">https://doi.org/10.48550/arXiv.2302.07842</a>
 </div>
-<div id="ref-miotto_who_2022" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-miotto_who_2022" role="listitem">
 Miotto, M., Rossberg, N., &amp; Kleinberg, B. (2022). <em>Who is <span>GPT</span>-3? An exploration of personality, values and demographics</em> (<span>arXiv</span>:2209.14338). <span>arXiv</span>. <a href="http://arxiv.org/abs/2209.14338">http://arxiv.org/abs/2209.14338</a>
 </div>
-<div id="ref-openai_openaievals_2023" class="csl-entry" role="listitem">
-OpenAI. (2023). <em>Openai/evals: Evals is a framework for evaluating <span>LLMs</span> and <span>LLM</span> systems, and an open-source registry of benchmarks.</em> <a href="https://github.com/openai/evals">https://github.com/openai/evals</a>
-</div>
-<div id="ref-park_social_2022" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-park_social_2022" role="listitem">
 Park, J. S., Popowski, L., Cai, C. J., Morris, M. R., Liang, P., &amp; Bernstein, M. S. (2022). <em>Social simulacra: Creating populated prototypes for social computing systems</em> (<span>arXiv</span>:2208.04024). <span>arXiv</span>. <a href="http://arxiv.org/abs/2208.04024">http://arxiv.org/abs/2208.04024</a>
 </div>
-<div id="ref-srivastava_beyond_2022" class="csl-entry" role="listitem">
-Srivastava, A., Rastogi, A., Rao, A., Shoeb, A. A. M., Abid, A., Fisch, A., Brown, A. R., Santoro, A., Gupta, A., Garriga-Alonso, A., Kluska, A., Lewkowycz, A., Agarwal, A., Power, A., Ray, A., Warstadt, A., Kocurek, A. W., Safaya, A., Tazarv, A., … Wu, Z. (2022). <em>Beyond the imitation game: Quantifying and extrapolating the capabilities of language models</em> (<span>arXiv</span>:2206.04615). <span>arXiv</span>. <a href="https://doi.org/10.48550/arXiv.2206.04615">https://doi.org/10.48550/arXiv.2206.04615</a>
-</div>
-<div id="ref-tamkin_understanding_2021" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-tamkin_understanding_2021" role="listitem">
 Tamkin, A., Brundage, M., Clark, J., &amp; Ganguli, D. (2021). <em>Understanding the capabilities, limitations, and societal impact of large language models</em> (<span>arXiv</span>:2102.02503). <span>arXiv</span>. <a href="https://doi.org/10.48550/arXiv.2102.02503">https://doi.org/10.48550/arXiv.2102.02503</a>
 </div>
 </div>
 </section>
-</section>
-
 </main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -565,8 +540,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
-
-
-
 </body></html>
