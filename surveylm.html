@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
 <meta content="Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran" name="author"/>
 <meta content="Social Science, Social AI, Large Language Models, Augmented Language Models, Alignment Research, Survey Method, Experimental Method" name="keywords"/>
-<meta content="Panalogy Lab Technical Report 23-001" name="description"/>
+<meta content="Panalogy Lab White Paper 23-001" name="description"/>
 <title>SurveyLM: a platform to explore emerging value perspectives in Augmented Language Models’ behaviors</title>
 <style>
 code{white-space: pre-wrap;}
@@ -50,6 +50,7 @@ div.csl-indent {
 <script src="surveylm_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="surveylm_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
 <link data-mode="light" href="surveylm_files/libs/bootstrap/bootstrap.min.css" id="quarto-bootstrap" rel="stylesheet"/>
+<style>html{ scroll-behavior: smooth; }</style>
 </head>
 <body>
 <header class="quarto-title-block default toc-left page-columns page-full" id="title-block-header">
@@ -58,7 +59,7 @@ div.csl-indent {
 <h1 class="title">SurveyLM: a platform to explore emerging value perspectives in Augmented Language Models’ behaviors</h1>
 <div>
 <div class="description">
-          Panalogy Lab Technical Report 23-001
+          Panalogy Lab White Paper 23-001
         </div>
 </div>
 </div>
@@ -67,19 +68,21 @@ div.csl-indent {
 <div class="quarto-title-meta-heading">Author</div>
 <div class="quarto-title-meta-heading">Affiliation</div>
 <div class="quarto-title-meta-contents">
-<p class="author"><a href="https://panalogy-lab.com">Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran</a> </p>
+<p class="author">Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran </p>
 </div>
 <div class="quarto-title-meta-contents">
 <p class="affiliation">
+<a href="https://panalogy-lab.com">
               Panalogy Lab
-            </p>
+              </a>
+</p>
 </div>
 </div>
 <div class="quarto-title-meta">
 <div>
 <div class="quarto-title-meta-heading">Published</div>
 <div class="quarto-title-meta-contents">
-<p class="date">29.07.2023</p>
+<p class="date">30.07.2023</p>
 </div>
 </div>
 </div>
@@ -94,11 +97,11 @@ div.csl-indent {
 <nav class="toc-active" id="TOC" role="doc-toc">
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a class="nav-link active" data-scroll-target="#sec-intro" href="#sec-intro" id="toc-sec-intro">Motivations</a></li>
-<li><a class="nav-link" data-scroll-target="#introduction" href="#introduction" id="toc-introduction">Introduction</a></li>
-<li><a class="nav-link" data-scroll-target="#platform-design" href="#platform-design" id="toc-platform-design">Platform Design</a></li>
-<li><a class="nav-link" data-scroll-target="#applications" href="#applications" id="toc-applications">Applications</a></li>
-<li><a class="nav-link" data-scroll-target="#future-developments" href="#future-developments" id="toc-future-developments">Future Developments</a></li>
+<li><a class="nav-link active" data-scroll-target="#sec-motivation" href="#sec-motivation" id="toc-sec-motivation">Motivation</a></li>
+<li><a class="nav-link" data-scroll-target="#sec-intro" href="#sec-intro" id="toc-sec-intro">Introduction</a></li>
+<li><a class="nav-link" data-scroll-target="#sec-paltform-design" href="#sec-paltform-design" id="toc-sec-paltform-design">Platform Design</a></li>
+<li><a class="nav-link" data-scroll-target="#sec-applications" href="#sec-applications" id="toc-sec-applications">Applications</a></li>
+<li><a class="nav-link" data-scroll-target="#sec-future-developments" href="#sec-future-developments" id="toc-sec-future-developments">Future Developments</a></li>
 <li><a class="nav-link" data-scroll-target="#references" href="#references" id="toc-references"><strong>References</strong></a></li>
 </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="surveylm_files/surveylm.pdf" target="_blank"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="surveylm_files/surveylm.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
@@ -106,8 +109,9 @@ div.csl-indent {
 <div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">
-<section class="level1" id="sec-intro">
-<h1>Motivations</h1>
+<div style="page-break-after: always;"></div>
+<section class="level1" id="sec-motivation">
+<h1>Motivation</h1>
 <p>We built SurveyLM with the following motivations in mind:</p>
 <ul>
 <li><p>AI alignment in complex social context is <em>important</em>, especially when AI systems make decisions or assist people in making decisions in complex settings where there may be no true “right” answer or where an answer is heavily dependent on contextual factors (specific information in real-world situations).</p></li>
@@ -117,7 +121,7 @@ div.csl-indent {
 <li><p>SurveyLM aims to be the first platform to deliver robust results for the above value propositions.</p></li>
 </ul>
 </section>
-<section class="level1" id="introduction">
+<section class="level1" id="sec-intro">
 <h1>Introduction</h1>
 <p>Our new platform, <strong>SurveyLM</strong>, aims to explore emerging value perspectives in Augmented Language Models (ALMs) <span class="citation" data-cites="mialon_augmented_2023">(<a href="#ref-mialon_augmented_2023" role="doc-biblioref">Mialon et al., 2023</a>)</span> through decision premises and contextuality in complex social settings. We chose to focus on complex social settings because these environments present a wide array of situations and (social) dilemmas that help assessing the multifaceted and nuanced value judgments that ALMs have to make in the real world. As a result, we can better understand their decision-making mechanisms and the underlying value systems they rely on.</p>
 <p>Our approach to exploring ALM’s behaviors, and their value perspectives, is based on presenting the models with complex sets of survey questions and experimental settings then analyzing their responses in various contexts. We opted for a survey-based approach as it has been proven to be an effective method for probing and value elicitation of ALMs <span class="citation" data-cites="arora_probing_2023 binz_using_2023">(<a href="#ref-arora_probing_2023" role="doc-biblioref">Arora et al., 2023</a>; <a href="#ref-binz_using_2023" role="doc-biblioref">Binz &amp; Schulz, 2023</a>)</span>. Human value elicitation has always been an important research avenue <span class="citation" data-cites="haerpfer_world_2021 hofstede_cultures_2005">(<a href="#ref-haerpfer_world_2021" role="doc-biblioref">Haerpfer et al., 2021</a>; <a href="#ref-hofstede_cultures_2005" role="doc-biblioref">Hofstede, 2005</a>)</span>, as an individual’s identity and values often manifest in the choices and decisions they make. Given the increasing role of ALMs as agents interacting with humans who act as principals (i.e., principal-agent relationship in nature), it becomes crucial to comprehend the underlying values of these models and their implications for recommendations and decision-making processes, which may or may not align with those of human principals. By allowing the models to respond to a series of contextualized questions, we can gain valuable insights into how they navigate ethical scenarios and prioritize differing values for different principal profiles and characteristics (e.g., age, gender, ethnicity, country of residence, etc.).</p>
@@ -128,7 +132,7 @@ div.csl-indent {
 <p>Overall, our framework proposed provides an effective and user-friendly platform for researchers to interact with GPT models. It upholds crucial principles such as user-first orientation, systematic and consistent operations, privacy respect, and safety in worst-case scenarios. Furthermore, it features robust components including a simple front-end interface, a real-time metrics monitor, secure databases, efficient agents, and a smart requests manager, all engineered to make complex survey research a breeze. We hope that this platform holds the potential to revolutionize how researchers engage with GPT models, offering a unique blend of flexibility, efficiency, and reliability.</p>
 <p>In conclusion, our platform SurveyLM offers a unique opportunity to explore and understand the emerging value perspectives from ALMs’ behaviors. By addressing the questions of why values matter, defining measures of values, and simulating ALMs in complex social settings, we can generate insights that will help shape the future of AI development. With a focus on social AI alignment and design, we aim to create long-lived, complex social AI agents and systems that align with human values, promoting a responsible and beneficial integration of AI into industry and society.</p>
 </section>
-<section class="level1" id="platform-design">
+<section class="level1" id="sec-paltform-design">
 <h1>Platform Design</h1>
 <p>The design of our platform is guided by several key principles centered around efficiency, flexibility, and user privacy.</p>
 <p><strong>Put Researchers First:</strong> This principle is the cornerstone of our design framework. The goal is to make the researcher’s interaction with the platform as intuitive and seamless as possible, reducing the complexity of the underlying operations. From parameter configuration to document and data processing, we aim to create an environment that empowers the user to focus solely on their research questions and outcomes. To achieve this, complex prompt engineering and API request handling will be handled internally by the platform, abstracting the process and reducing the technical knowledge necessary to operate the tool effectively.</p>
@@ -152,7 +156,7 @@ div.csl-indent {
 <p><strong>Request data:</strong> This component stores agent data and request data in an optimal format created by the simulation component. It also serves as a streaming data source to avoid unnecessary, and costly, memory consumption that would take place while concurrent api calls are made for each agent’s request.</p>
 <p><strong>Request Handler:</strong> This component manages the complexity of prompt engineering and concurrent API calls. It allows the simulation process to communicate with the GPT models seamlessly and ensures all prompts are correctly structured and successfully sent. It also manages API calls to reduce the chance of hitting rate limits frequently while ensuring that a simulation on large scale (e.g. one with 1000 agents) can run as fast as it could. Another important feature of this component is the handling of retry failures due to rate limit and API request errors. In the face of these failures, the handler will automatically process the last safe survey results and return them in proper formats for the agents to process further.</p>
 </section>
-<section class="level1" id="applications">
+<section class="level1" id="sec-applications">
 <h1>Applications</h1>
 <p>With the emergent capabilities of Large Language Models (LLMs) and the ongoing development of Augmented Language Models (ALMs), understanding the underlying premises that govern their behaviors and decision-making processes becomes increasingly crucial, especially when they operate in complex social settings and have real-world impact. This understanding is essential to ensure the alignment of social AI with human values.</p>
 <p>ALMs, which are essentially built on top of pre-trained LLMs like gpt-4, incorporate various elements such as retrieval plug-ins, different learning techniques (few-shot), diverse prompting methods (such as chain-of-thought, self-model, and contextual prompts), functional coding, and integration with other modalities like voice, vision, and sound <span class="citation" data-cites="mialon_augmented_2023">(<a href="#ref-mialon_augmented_2023" role="doc-biblioref">Mialon et al., 2023</a>)</span>. Additionally, future iterations of ALMs are expected to incorporate different AI techniques such as reinforcement learning and symbolic logic, enhancing their knowledge organisation, reasoning, and learning capabilities.</p>
@@ -190,7 +194,7 @@ div.csl-indent {
 <p>These topics are typically difficult to discuss openly, but SurveyLM provides a secure and confidential platform for exploring them in depth.</p>
 <p>We are confident that as SurveyLM evolves and adapts over time, it will uncover numerous other promising areas of application. The examples provided here represent just a fraction of the platform’s potential, highlighting only the possibilities we, and others in the field, have identified to date. With the rapidly advancing landscape of social science research, there is no doubt that the scope of SurveyLM’s application will continue to expand, revealing even more groundbreaking possibilities in the future.</p>
 </section>
-<section class="level1" id="future-developments">
+<section class="level1" id="sec-future-developments">
 <h1>Future Developments</h1>
 <p>Despite its advanced design and capabilities, our research platform faces certain limitations that we are actively seeking to address. These hurdles present opportunities for enhancement and refinement, contributing to the platform’s ongoing evolution.</p>
 <p><strong>Simplistic Agent Profile Configuration:</strong> A significant limitation lies in the current mechanistic profile configuration for each agent (e.g., you are &lt;AGE&gt;, your personality is &lt;BIG 5 PROFILE&gt;, and reside in &lt;LOCATION&gt;). We do not draw on or attempt to simulate human subjects from demographic backgrounds of past survey respondents, as in e.g., <span class="citation" data-cites="argyle_ai_2023">(<a href="#ref-argyle_ai_2023" role="doc-biblioref">Argyle et al., 2023</a>)</span>. Standard profile constructs often used in survey studies underpin this design, providing a simplified interaction model for users. However, these constructs’ rudimentary nature restricts the context within which the GPT models function, sometimes compromising the depth and richness of their responses. To capture the nuanced, multifaceted nature of human contexts, we need a more sophisticated approach. The solution we are developing and testing is a custom profile prompt feature, which will enable users to create intricate, context-sensitive profiles for their agents (e.g., profile construction by story telling). By broadening the contextual basis of agent profiles, we anticipate an enhancement in the model responses’ relevance and applicability.</p>
@@ -539,7 +543,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->
+<script src="surveylm_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
