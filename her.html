@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran">
-<meta name="keywords" content="Natural Conversation, Social Science, Social AI, Large Language Models, Augmented Language Models, Alignment Research, Natural Conversation, Experimental Method">
-<meta name="description" content="Panalogy Lab Technical Report 2023-001">
-
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.4.315" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<meta content="Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran" name="author"/>
+<meta content="Natural Conversation, Social Science, Social AI, Large Language Models, Augmented Language Models, Alignment Research, Natural Conversation, Experimental Method" name="keywords"/>
+<meta content="Panalogy Lab Technical Report 2023-001" name="description"/>
 <title>her: a platform to explore the possibility of natural conversational AI</title>
 <style>
 code{white-space: pre-wrap;}
@@ -43,132 +40,111 @@ div.csl-right-inline {
 div.csl-indent {
   margin-left: 2em;
 }</style>
-
-
 <script src="her_files/libs/clipboard/clipboard.min.js"></script>
 <script src="her_files/libs/quarto-html/quarto.js"></script>
 <script src="her_files/libs/quarto-html/popper.min.js"></script>
 <script src="her_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="her_files/libs/quarto-html/anchor.min.js"></script>
-<link href="her_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="her_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="her_files/libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="her_files/libs/quarto-html/quarto-syntax-highlighting.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="her_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="her_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="her_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="her_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link data-mode="light" href="her_files/libs/bootstrap/bootstrap.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <style>html{ scroll-behavior: smooth; }</style>
-
-
 </head>
-
 <body>
-
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">her: a platform to explore the possibility of natural conversational AI</h1>
-                  <div>
-        <div class="description">
+<header class="quarto-title-block default toc-left page-columns page-full" id="title-block-header">
+<div class="quarto-title-banner page-columns page-full">
+<div class="quarto-title column-body">
+<h1 class="title">her: a platform to explore the possibility of natural conversational AI</h1>
+<div>
+<div class="description">
           Panalogy Lab Technical Report 2023-001
         </div>
-      </div>
-                </div>
-  </div>
-    
-  <div class="quarto-title-meta-author">
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
-    
-      <div class="quarto-title-meta-contents">
-      <p class="author">Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran <a href="mailto:steven.bickley@panalogy-lab.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-    </div>
-      <div class="quarto-title-meta-contents">
-          <p class="affiliation">
-              <a href="https://panalogy-lab.com">
+</div>
+</div>
+</div>
+<div class="quarto-title-meta-author">
+<div class="quarto-title-meta-heading">Author</div>
+<div class="quarto-title-meta-heading">Affiliation</div>
+<div class="quarto-title-meta-contents">
+<p class="author">Steve J. Bickley, Ho Fai Chan, Bang Dao, Benno Torgler, Son Tran <a class="quarto-title-author-email" href="mailto:steven.bickley@panalogy-lab.com"><i class="bi bi-envelope"></i></a> </p>
+</div>
+<div class="quarto-title-meta-contents">
+<p class="affiliation">
+<a href="https://panalogy-lab.com">
               Panalogy Lab
               </a>
-            </p>
-        </div>
-      </div>
-
-  <div class="quarto-title-meta">
-
-        
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">20.10.2023</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  <div>
-    <div class="abstract">
-      <div class="block-title">Abstract</div>
-      <p>Our platform, “her”, aims to advance the rapidly evolving field of natural conversational Artificial Intelligence (AI) by integrating the emergent capabilities of Augmented Language Models (ALMs) with a dual voice and text modality. In essence, natural conversational AI is about designing AI systems to interact with humans in a way that feels “natural”. This includes understanding and generating human language, recognizing speech, interpreting context, resolving ambiguity, and even having an understanding and expression of emotions and empathy. The ultimate goal of natural conversational AI is to create artificial agents that can converse with a human just like another human would, making human-computer interactions as seamless and intuitive as possible, and opening up prospects for long-lived human-AI social interactions. Through “her”, we aim to comprehend the underlying principles and mechanisms that make AI interactions feel more natural and intuitive to humans. We are keen on dissecting the factors that contribute to the perceived “naturalness” of a conversation with AI and developing metrics to quantitatively evaluate this quality over time. Harnessing the power of state-of-the-art (SOTA) AI models, we have integrated advanced techniques and technologies into a unified platform capable of engaging in natural conversations. This innovative system will not only advance our understanding of AI-human interactions but also bring practical solutions to various sectors. Key applications for our research lie in the realms of (among others) education and entertainment. In education, this platform could serve as an intelligent tutor providing personalized assistance, while in entertainment, it could revolutionize how audiences interact with digital content. This project, therefore, holds substantial promise in fostering a more seamless and dynamic interaction between AI and human users, propelling us further into the age of natural conversational AI.</p>
-    </div>
-  </div>
-
-  <div>
-    <div class="keywords">
-      <div class="block-title">Keywords</div>
-      <p>Natural Conversation, Social Science, Social AI, Large Language Models, Augmented Language Models, Alignment Research, Natural Conversation, Experimental Method</p>
-    </div>
-  </div>
-  
-  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
-<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link" data-scroll-target="#sec-intro">Background</a></li>
-  <li><a href="#sec-paltform-design" id="toc-sec-paltform-design" class="nav-link" data-scroll-target="#sec-paltform-design">Platform Design and Features</a></li>
-  <li><a href="#sec-applications" id="toc-sec-applications" class="nav-link" data-scroll-target="#sec-applications">Applications</a></li>
-  <li><a href="#sec-future-developments" id="toc-sec-future-developments" class="nav-link" data-scroll-target="#sec-future-developments">Future Developments</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><strong>References</strong></a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="her.pdf"><i class="bi bi-file-pdf"></i>PDF (arxiv)</a></li><li><a href="her.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+</p>
 </div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<div class="quarto-title-meta">
+<div>
+<div class="quarto-title-meta-heading">Published</div>
+<div class="quarto-title-meta-contents">
+<p class="date">20.10.2023</p>
+</div>
+</div>
+</div>
+<div>
+<div class="abstract">
+<div class="block-title">Abstract</div>
+<p>Our platform, “her”, aims to advance the rapidly evolving field of natural conversational Artificial Intelligence (AI) by integrating the emergent capabilities of Augmented Language Models (ALMs) with a dual voice and text modality. In essence, natural conversational AI is about designing AI systems to interact with humans in a way that feels “natural”. This includes understanding and generating human language, recognizing speech, interpreting context, resolving ambiguity, and even having an understanding and expression of emotions and empathy. The ultimate goal of natural conversational AI is to create artificial agents that can converse with a human just like another human would, making human-computer interactions as seamless and intuitive as possible, and opening up prospects for long-lived human-AI social interactions. Through “her”, we aim to comprehend the underlying principles and mechanisms that make AI interactions feel more natural and intuitive to humans. We are keen on dissecting the factors that contribute to the perceived “naturalness” of a conversation with AI and developing metrics to quantitatively evaluate this quality over time. Harnessing the power of state-of-the-art (SOTA) AI models, we have integrated advanced techniques and technologies into a unified platform capable of engaging in natural conversations. This innovative system will not only advance our understanding of AI-human interactions but also bring practical solutions to various sectors. Key applications for our research lie in the realms of (among others) education and entertainment. In education, this platform could serve as an intelligent tutor providing personalized assistance, while in entertainment, it could revolutionize how audiences interact with digital content. This project, therefore, holds substantial promise in fostering a more seamless and dynamic interaction between AI and human users, propelling us further into the age of natural conversational AI.</p>
+</div>
+</div>
+<div>
+<div class="keywords">
+<div class="block-title">Keywords</div>
+<p>Natural Conversation, Social Science, Social AI, Large Language Models, Augmented Language Models, Alignment Research, Natural Conversation, Experimental Method</p>
+</div>
+</div>
+</header><div class="page-columns page-rows-contents page-layout-article toc-left" id="quarto-content">
+<div class="sidebar toc-left" id="quarto-sidebar-toc-left">
+<nav class="toc-active" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#motivation" href="#motivation" id="toc-motivation">Motivation</a></li>
+<li><a class="nav-link" data-scroll-target="#sec-intro" href="#sec-intro" id="toc-sec-intro">Background</a></li>
+<li><a class="nav-link" data-scroll-target="#sec-paltform-design" href="#sec-paltform-design" id="toc-sec-paltform-design">Platform Design and Features</a></li>
+<li><a class="nav-link" data-scroll-target="#sec-applications" href="#sec-applications" id="toc-sec-applications">Applications</a></li>
+<li><a class="nav-link" data-scroll-target="#sec-future-developments" href="#sec-future-developments" id="toc-sec-future-developments">Future Developments</a></li>
+<li><a class="nav-link" data-scroll-target="#references" href="#references" id="toc-references"><strong>References</strong></a></li>
+</ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="her_files/her.pdf" target="_blank"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="her_files/her.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+</div>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">
-
-
-
-
 <div style="page-break-after: always;"></div>
-<section id="motivation" class="level1">
+<section class="level1" id="motivation">
 <h1>Motivation</h1>
 <p>We built “her” with the following motivations in mind:</p>
 <ul>
-<li><p>Language models such as GPT-4, Bard, Claude, etc. are touted as a pathway to AGI, and the ultimate test of AGI is the capability to make complex decisions involving interactions with humans and other artifacts in complex social settings (not just writing a poem or making a video). Making these kinds of complex social decisions, e.g.&nbsp;making friends, choosing spouses, pursuing a degree, trusting an AI system, telling a lie, etc., is what humans do every day in their societies.</p></li>
+<li><p>Language models such as GPT-4, Bard, Claude, etc. are touted as a pathway to AGI, and the ultimate test of AGI is the capability to make complex decisions involving interactions with humans and other artifacts in complex social settings (not just writing a poem or making a video). Making these kinds of complex social decisions, e.g. making friends, choosing spouses, pursuing a degree, trusting an AI system, telling a lie, etc., is what humans do every day in their societies.</p></li>
 <li><p>Thus, making complex social decisions is crucial test of AGI, and every social decision seems to start and end with a natural conversation. Natural conversations create decision premises that underpin decision processes. Thus, being able to engage in natural conversations plays a key role in designing AGI. Here, we define natural conversations are conversations that include, but not limited to, these elements: critical yet constructive and creative engagement, adaptive spontaneity, multi-modal and adaptive conversation style, evolving identity and perception formation, contextual understanding and expression of emotions, multi-level reflection, dynamic memories, grounded decision-making knowledge, and understanding of uncertainty.</p></li>
 <li><p>“her” is a platform to study and design AI system capable of engaging in natural conversations with humans. The platform was designed to explore to what extent we can address the limits of current LMs and their hard-coded prompt-engineering variants in terms of engaging in natural conversations. These models inherently lack most elements of naturalness when engaging in complex conversations. Our research explores ways to address this inherent limitation by extending the models with additional layers that learn to develop the elements of naturalness over time, through experience gained from past conversations.</p></li>
 </ul>
 </section>
-<section id="sec-intro" class="level1">
+<section class="level1" id="sec-intro">
 <h1>Background</h1>
-<p>The development of Large Language Models (LLMs) marks a significant milestone for conversational AI. These models, which leverage sophisticated algorithms to understand and generate human-like text, have redefined our ability to create systems capable of engaging in meaningful dialogues. Particularly as they become increasingly convincing and capable through augmentations (i.e., Augmented Language Models or ALMs) via techniques like in-context learning and chain-of-thought prompting (Lee et al., n.d.), external memory, and the integration of other and multiple modalities (e.g., sound, visual). See Mialon et al.&nbsp;(2023) for a seminal review on ALMs. The increased complexity and fluency of these ALMs have brought us one step closer to the realization of more natural, human-like conversations with machines.</p>
+<p>The development of Large Language Models (LLMs) marks a significant milestone for conversational AI. These models, which leverage sophisticated algorithms to understand and generate human-like text, have redefined our ability to create systems capable of engaging in meaningful dialogues. Particularly as they become increasingly convincing and capable through augmentations (i.e., Augmented Language Models or ALMs) via techniques like in-context learning and chain-of-thought prompting (Lee et al., n.d.), external memory, and the integration of other and multiple modalities (e.g., sound, visual). See Mialon et al. (2023) for a seminal review on ALMs. The increased complexity and fluency of these ALMs have brought us one step closer to the realization of more natural, human-like conversations with machines.</p>
 <p>Yet, it’s important to differentiate between a conversation and a ‘natural’ conversation. While a conversation may involve a simple exchange of information (e.g., question-answering, a recommendation), a ‘natural’ conversation is characterized by adaptive spontaneity, critical and constructive engagement, context-awareness, emotional understanding, contextual memories, grounded knowledge, and the ability to manage the flow of dialogue, and often intertwined with complex elements such as humor, idioms, cultural nuances, and ambiguity.</p>
 <p>Regarding conversational agents, findings from certain human-computer interaction (HCI) studies indicate that humans often prioritize the transactional aspects of conversation, such as task completion and goal attainment, over the more social, interactive elements (Clark et al., 2019). This mirrors the conversational requirements with strangers or casual acquaintances. However, it’s worth noting that such a focus may shift based on factors like user characteristics (Riefle &amp; Benz, 2021) and the specific context of use (Rheu et al., 2021). Intriguingly, marketing research presents a more favorable view regarding the benefits of more natural conversational agents (Mariani et al., 2023). This optimism could suggest the significant value that consumers place on conversational AI now and into the future.</p>
-<p>Clark et al.&nbsp;(2019) posed an intriguing question: what makes a good conversation? According to their study, humans value mutual understanding, trustworthiness, active listening, and humor in their conversations, but these traits’ desirability can differ across various types of human-human relationships. When it comes to human-agent interactions, these tend to be more transactional, utilitarian, and one-sided. However, sensitivity to the context of interaction, understanding of the conversation type required, and the underlying interaction purpose remain vital (p.&nbsp;475). It is also worth noting that social functions of conversation play a critical role in establishing common ground, trust, and a sense of connection among participants. So, both transitional and social talk are important, and whilst serving distinct purposes, they frequently intersect in the context of natural conversations.</p>
+<p>Clark et al. (2019) posed an intriguing question: what makes a good conversation? According to their study, humans value mutual understanding, trustworthiness, active listening, and humor in their conversations, but these traits’ desirability can differ across various types of human-human relationships. When it comes to human-agent interactions, these tend to be more transactional, utilitarian, and one-sided. However, sensitivity to the context of interaction, understanding of the conversation type required, and the underlying interaction purpose remain vital (p. 475). It is also worth noting that social functions of conversation play a critical role in establishing common ground, trust, and a sense of connection among participants. So, both transitional and social talk are important, and whilst serving distinct purposes, they frequently intersect in the context of natural conversations.</p>
 <p>Why does natural conversation matter? The more ‘natural’ an AI’s conversational capabilities are, the more intuitive, engaging, and satisfying the user’s experience becomes. This seamless interaction fosters trust and understanding, reduces frustration, and increases the chances of successful communication.</p>
 <p>So, why AI? AI’s unique attributes make it an ideal candidate for facilitating natural conversation. Its limitless patience enables it to handle complex interactions without exhaustion. Its vast knowledge base allows it to provide accurate information across an array of topics. Its capability to simulate compassion can make conversations more comforting. Its constant availability ensures round-the-clock assistance, and its universal application means it can be customized to serve diverse needs across different cultures, languages, and domains.</p>
 <p>At Panalogy Lab, we recognise that we are at the precipice of a new era where AI systems can function as enduring agents capable of making complex decisions, while interacting with humans and other entities in real-world social contexts. We acknowledge the monumental challenge of aligning the decision-making behaviors of these social AI systems with the evolving intentions and values of human society, an area whose complexity we are still endeavoring to fully comprehend. Our approach, however, is firmly rooted in this challenge. We believe that by infusing AI systems with social and emotional intelligence, we can create agents that can more effectively understand and mimic human conversational patterns. Through this, we aim to revolutionize the way humans interact with technology, pushing the boundaries of conversational AI and striving towards a future where AI not only understands our language but also the complex social fabric in which it is embedded.</p>
 </section>
-<section id="sec-paltform-design" class="level1">
+<section class="level1" id="sec-paltform-design">
 <h1>Platform Design and Features</h1>
 <p>The patlform’s design process is guided by the following principles.</p>
 <p><strong>Scientific focus on natural conversation:</strong> the platform should be able to create an authentic feeling of having face-to-face natural conversations. Here, we take a scientific approach to identifying key elements of what make a conversation natural by carefully reviewing existing ideas in relevant literature and creating new constructs based on our own insights. These elements include, but not limited to, these elements: critical yet constructive and creative engagement, adaptive spontaneity, multi-modal and adaptive conversation style, evolving perception formation, contextual understanding and expression of emotions, multi-level reflection, dynamic memories, grounded perception and decision-making knowledge, and understanding of uncertainty. With these elements identified, we collect conversational data and transformed them into parameters that can be used by scientific methods to evaluate the naturalness of a conversation.</p>
 <p><strong>Evolving and grounded companionship:</strong> we started with the premise that natural conversations, if sustained over time, may result in an emergent companionship between human users and the platform. This companionship, however, must satisfy two criteria. First, it must be a result of learning from conversational evolution rather than instructions embedded in rigidly engineered prompt. Second, the platform’s operations should be grounded in the sense that LMs do not actually “understand” what a conversation means in the best possible way and that they should not be instructed to “pretend” to assume a human character. Prompt engineering is the most obvious evidence showing that LMs lacks the kind of nuance “understanding” that humans have: a slightly rephrased can result in a significant different outcome. Our goal is to see whether, with evolution based on context learning based on our scientific framework, a new kind of companionship between humans and AI systems can emerge.</p>
 <p><strong>Ease of interaction :</strong> The goal is to make users’ interaction with the platform as intuitive and simple as possible while making conversations flow smoothly. Since computers and humans have different ways of initiating and engaging in a conversation, especially the use of sensory elements, achieving this goal is an on-going process. The best solution is likely a compromise between what can be made possible by existing software and hardware technologies and how much users find the platform useful.</p>
 <p>Based on these principles, “her” was built with several components as shown in Figure 1.</p>
-<div id="platform-components" class="quarto-figure quarto-figure-center anchored">
+<div class="quarto-figure quarto-figure-center anchored" id="platform-components">
 <figure class="figure">
-<p><img src="design.png" class="img-fluid figure-img"></p>
+<p><img alt="platform design" class="img-fluid figure-img" src="her_files/design.png"/></p>
 <figcaption class="figure-caption">Key components of the platform design</figcaption>
 </figure>
 </div>
@@ -195,7 +171,7 @@ div.csl-indent {
 <li><p>Overall, an interesting feature of this update is that ‘her’ will from time to time display emergent behaviors by using function calls in a ways never expected before.</p></li>
 </ul>
 </section>
-<section id="sec-applications" class="level1">
+<section class="level1" id="sec-applications">
 <h1>Applications</h1>
 <p>With the emergent capabilities of Large Language Models (LLMs) and the ongoing development of Augmented Language Models (ALMs), understanding the underlying premises that govern their behaviors and decision-making processes becomes increasingly crucial, especially when they operate in complex social settings and have real-world impact. This understanding is essential to ensure the alignment of social AI with human values.</p>
 <p>ALMs, which are essentially built on top of pre-trained LLMs like OpenAI’s gpt-4, incorporate various elements such as retrieval plug-ins, different learning techniques (few-shot), diverse prompting methods (such as chain-of-thought, self-model, and contextual prompts), functional coding, and integration with other modalities like voice, vision, and sound <span class="citation" data-cites="mialon_augmented_2023">(<a href="#ref-mialon_augmented_2023" role="doc-biblioref">Mialon et al., 2023</a>)</span>. Additionally, future iterations of ALMs are expected to incorporate different AI techniques such as reinforcement learning and symbolic logic, enhancing their knowledge organisation, reasoning, and learning capabilities.</p>
@@ -233,7 +209,7 @@ div.csl-indent {
 <p>These topics are typically difficult to discuss openly, but SurveyLM provides a secure and confidential platform for exploring them in depth.</p>
 <p>We are confident that as SurveyLM evolves and adapts over time, it will uncover numerous other promising areas of application. The examples provided here represent just a fraction of the platform’s potential, highlighting only the possibilities we, and others in the field, have identified to date. With the rapidly advancing landscape of social science research, there is no doubt that the scope of SurveyLM’s application will continue to expand, revealing even more groundbreaking possibilities in the future.</p>
 </section>
-<section id="sec-future-developments" class="level1">
+<section class="level1" id="sec-future-developments">
 <h1>Future Developments</h1>
 <p>Despite its advanced design and capabilities, our research platform faces certain limitations that we are actively seeking to address. These hurdles present opportunities for enhancement and refinement, contributing to the platform’s ongoing evolution.</p>
 <p><strong>Simplistic Agent Profile Configuration:</strong> A significant limitation lies in the current mechanistic profile configuration for each agent (e.g., you are &lt;AGE&gt;, your personality is &lt;BIG 5 PROFILE&gt;, and reside in &lt;LOCATION&gt;). We do not draw on or attempt to simulate human subjects from demographic backgrounds of past survey respondents, as in e.g., <span class="citation" data-cites="argyle_ai_2023">(<a href="#ref-argyle_ai_2023" role="doc-biblioref">Argyle et al., 2023</a>)</span>. Standard profile constructs often used in survey studies underpin this design, providing a simplified interaction model for users. However, these constructs’ rudimentary nature restricts the context within which the GPT models function, sometimes compromising the depth and richness of their responses. To capture the nuanced, multifaceted nature of human contexts, we need a more sophisticated approach. The solution we are developing and testing is a custom profile prompt feature, which will enable users to create intricate, context-sensitive profiles for their agents (e.g., profile construction by story telling). By broadening the contextual basis of agent profiles, we anticipate an enhancement in the model responses’ relevance and applicability.</p>
@@ -245,51 +221,50 @@ div.csl-indent {
 <p>For beta access and further details about the SurveyLM platform, please contact the corresponding author of this paper.</p>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="references" class="level1 unnumbered">
+<section class="level1 unnumbered" id="references">
 <h1 class="unnumbered"><strong>References</strong></h1>
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
-<div id="ref-aher_using_2023" class="csl-entry" role="listitem">
+<div class="references csl-bib-body hanging-indent" data-line-spacing="2" id="refs" role="list">
+<div class="csl-entry" id="ref-aher_using_2023" role="listitem">
 Aher, G., Arriaga, R. I., &amp; Kalai, A. T. (2023). <em>Using large language models to simulate multiple humans and replicate human subject studies</em> (<span>arXiv</span>:2208.10264). <span>arXiv</span>. <a href="http://arxiv.org/abs/2208.10264">http://arxiv.org/abs/2208.10264</a>
 </div>
-<div id="ref-argyle_ai_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-argyle_ai_2023" role="listitem">
 Argyle, L. P., Busby, E., Gubler, J., Bail, C., Howe, T., Rytting, C., &amp; Wingate, D. (2023). <em><span>AI</span> chat assistants can improve conversations about divisive topics</em> (<span>arXiv</span>:2302.07268). <span>arXiv</span>. <a href="http://arxiv.org/abs/2302.07268">http://arxiv.org/abs/2302.07268</a>
 </div>
-<div id="ref-arora_probing_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-arora_probing_2023" role="listitem">
 Arora, A., Kaffee, L.-A., &amp; Augenstein, I. (2023). <em>Probing pre-trained language models for cross-cultural differences in values</em> (<span>arXiv</span>:2203.13722). <span>arXiv</span>. <a href="http://arxiv.org/abs/2203.13722">http://arxiv.org/abs/2203.13722</a>
 </div>
-<div id="ref-bai_constitutional_2022" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-bai_constitutional_2022" role="listitem">
 Bai, Y., Kadavath, S., Kundu, S., Askell, A., Kernion, J., Jones, A., Chen, A., Goldie, A., Mirhoseini, A., McKinnon, C., Chen, C., Olsson, C., Olah, C., Hernandez, D., Drain, D., Ganguli, D., Li, D., Tran-Johnson, E., Perez, E., … Kaplan, J. (2022). <em>Constitutional <span>AI</span>: Harmlessness from <span>AI</span> feedback</em> (<span>arXiv</span>:2212.08073). <span>arXiv</span>. <a href="https://doi.org/10.48550/arXiv.2212.08073">https://doi.org/10.48550/arXiv.2212.08073</a>
 </div>
-<div id="ref-binz_using_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-binz_using_2023" role="listitem">
 Binz, M., &amp; Schulz, E. (2023). Using cognitive psychology to understand <span>GPT</span>-3. <em>Proceedings of the National Academy of Sciences</em>, <em>120</em>(6), e2218523120. <a href="https://doi.org/10.1073/pnas.2218523120">https://doi.org/10.1073/pnas.2218523120</a>
 </div>
-<div id="ref-horton_large_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-horton_large_2023" role="listitem">
 Horton, J. J. (2023). <em>Large language models as simulated economic agents: What can we learn from homo silicus?</em> (<span>arXiv</span>:2301.07543). <span>arXiv</span>. <a href="http://arxiv.org/abs/2301.07543">http://arxiv.org/abs/2301.07543</a>
 </div>
-<div id="ref-korinek_language_2023-1" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-korinek_language_2023-1" role="listitem">
 Korinek, A. (2023). <em>Language models and cognitive automation for economic research</em> (30957). National Bureau of Economic Research. <a href="https://doi.org/10.3386/w30957">https://doi.org/10.3386/w30957</a>
 </div>
-<div id="ref-mialon_augmented_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-mialon_augmented_2023" role="listitem">
 Mialon, G., Dessì, R., Lomeli, M., Nalmpantis, C., Pasunuru, R., Raileanu, R., Rozière, B., Schick, T., Dwivedi-Yu, J., Celikyilmaz, A., Grave, E., LeCun, Y., &amp; Scialom, T. (2023). <em>Augmented language models: A survey</em> (<span>arXiv</span>:2302.07842). <span>arXiv</span>. <a href="https://doi.org/10.48550/arXiv.2302.07842">https://doi.org/10.48550/arXiv.2302.07842</a>
 </div>
-<div id="ref-miotto_who_2022" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-miotto_who_2022" role="listitem">
 Miotto, M., Rossberg, N., &amp; Kleinberg, B. (2022). <em>Who is <span>GPT</span>-3? An exploration of personality, values and demographics</em> (<span>arXiv</span>:2209.14338). <span>arXiv</span>. <a href="http://arxiv.org/abs/2209.14338">http://arxiv.org/abs/2209.14338</a>
 </div>
-<div id="ref-park_social_2022" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-park_social_2022" role="listitem">
 Park, J. S., Popowski, L., Cai, C. J., Morris, M. R., Liang, P., &amp; Bernstein, M. S. (2022). <em>Social simulacra: Creating populated prototypes for social computing systems</em> (<span>arXiv</span>:2208.04024). <span>arXiv</span>. <a href="http://arxiv.org/abs/2208.04024">http://arxiv.org/abs/2208.04024</a>
 </div>
-<div id="ref-shinn_reflexion_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-shinn_reflexion_2023" role="listitem">
 Shinn, N., Cassano, F., Labash, B., Gopinath, A., Narasimhan, K., &amp; Yao, S. (2023). <em>Reflexion: Language agents with verbal reinforcement learning</em> (<span>arXiv</span>:2303.11366). <span>arXiv</span>. <a href="https://doi.org/10.48550/arXiv.2303.11366">https://doi.org/10.48550/arXiv.2303.11366</a>
 </div>
-<div id="ref-touvron_llama_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-touvron_llama_2023" role="listitem">
 Touvron, H., Martin, L., Stone, K., Albert, P., Almahairi, A., Babaei, Y., Bashlykov, N., Batra, S., Bhargava, P., Bhosale, S., Bikel, D., Blecher, L., Ferrer, C. C., Chen, M., Cucurull, G., Esiobu, D., Fernandes, J., Fu, J., Fu, W., … Scialom, T. (2023). <em>Llama 2: Open foundation and fine-tuned chat models</em> (<span>arXiv</span>:2307.09288). <span>arXiv</span>. <a href="https://doi.org/10.48550/arXiv.2307.09288">https://doi.org/10.48550/arXiv.2307.09288</a>
 </div>
-<div id="ref-yao_react_2023" class="csl-entry" role="listitem">
+<div class="csl-entry" id="ref-yao_react_2023" role="listitem">
 Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., &amp; Cao, Y. (2023). <em><span>ReAct</span>: Synergizing reasoning and acting in language models</em> (<span>arXiv</span>:2210.03629). <span>arXiv</span>. <a href="https://doi.org/10.48550/arXiv.2210.03629">https://doi.org/10.48550/arXiv.2210.03629</a>
 </div>
 </div>
 </section>
-
 </main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -653,9 +628,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
-
-
-
 <script src="her_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
