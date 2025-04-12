@@ -137,3 +137,9 @@
     z-index: 2;
   }
 }
+
+#research-papers {
+  text-align: center;
+  line-height: 1.3em;
+  margin-top: 20px;
+}
