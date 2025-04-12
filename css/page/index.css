@@ -110,3 +110,20 @@
   max-height: 100px;
   object-fit: contain;
 }
+
+/* Desktop styling - default */
+.tagline-responsive {
+  font-size: 2rem;
+  white-space: nowrap;
+}
+
+/* Mobile-friendly override */
+@media (max-width: 768px) {
+  .tagline-responsive {
+    font-size: 1.5rem;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.4;
+    padding: 0 10px; /* small padding to avoid screen-edge hugging */
+  }
+}
