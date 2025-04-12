@@ -1,0 +1,112 @@
+@keyframes fadeInShade {
+    0%   { background-color: rgba(0, 0, 0, 0); }
+    100% { background-color: rgba(0, 0, 0, 0.25); }
+}
+
+.slider-text-background {
+    animation: fadeInShade 0.8s ease 0.4s forwards;
+    padding: 16px;
+    border-radius: 5px;
+    display: inline-block;
+    width: auto;
+}
+
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Base logo styling */
+.partner-logo {
+    height: 80px;
+    max-width: 240px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.9;
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+}
+
+/* On hover – reveal color + full opacity */
+.partner-logo:hover {
+    filter: none;
+    opacity: 1;
+}
+
+/* Optional logo-specific adjustments */
+.partner-logo.small-logo {
+    height: 60px;
+    max-width: 180px;
+}
+
+.partner-logo.wide-logo {
+    max-width: 300px;
+}
+
+.partner-logo.circle-logo {
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.partner-logo.inductive {
+    height: 140px;              /* sets a consistent logo height */
+    max-width: 380px;          /* prevents super-wide logos from stretching */
+}
+
+
+/* Scale down the team carousel cards */
+.team-box-layout1 {
+    max-width: 180px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ✅ centers everything including the image */
+}
+
+.team-box-layout1 img.img-circle {
+    width: 100px;
+    height: 100px;
+    object-fit: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Adjust title and designation */
+.team-box-layout1 .team-title {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.team-box-layout1 .team-designation {
+    font-size: 13px;
+    color: #555;
+    margin-top: 2px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.small-font td, .small-font th {
+    font-size: 13px;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.service-box-layout1 img.image-center {
+  display: block;
+  margin: 0 auto 15px;
+  max-height: 100px;
+  object-fit: contain;
+}
